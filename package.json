@@ -1,0 +1,23 @@
+{
+  "name": "test_parser",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node ./dist/app.js",
+    "antlr4ts": "antlr4ts -visitor -o ./src/antlr ./src/LexerGrammarCypress.g4 ./src/ParserGrammarCypress.g4"
+  },
+  "version": "1.0.0",
+  "description": "Proyecto de prueba",
+  "main": "app.js",
+  "keywords": [
+    "prueba"
+  ],
+  "author": "Wilton",
+  "license": "ISC",
+  "devDependencies": {
+    "antlr4ts-cli": "^0.5.0-alpha.4",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.4"
+  }
+}
