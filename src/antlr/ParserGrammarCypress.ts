@@ -51,15 +51,19 @@ export class ParserGrammarCypress extends Parser {
 	public static readonly WS = 21;
 	public static readonly OPEN_KEY = 22;
 	public static readonly CLOSE_KEY = 23;
-	public static readonly ENTONCES = 24;
-	public static readonly COMMA = 25;
-	public static readonly PUNTO = 26;
-	public static readonly COMMENT1 = 27;
-	public static readonly COMMENT2 = 28;
-	public static readonly PARAMETER = 29;
-	public static readonly PESO = 30;
-	public static readonly INNERTEXT = 31;
-	public static readonly LENGTH = 32;
+	public static readonly OPEN_PARENTHESIS = 24;
+	public static readonly CLOSE_PARENTHESIS = 25;
+	public static readonly OPEN_BRACKET = 26;
+	public static readonly CLOSE_BRACKET = 27;
+	public static readonly ENTONCES = 28;
+	public static readonly COMMA = 29;
+	public static readonly PUNTO = 30;
+	public static readonly COMMENT1 = 31;
+	public static readonly COMMENT2 = 32;
+	public static readonly PARAMETER = 33;
+	public static readonly PESO = 34;
+	public static readonly INNERTEXT = 35;
+	public static readonly LENGTH = 36;
 	public static readonly RULE_testBlock = 0;
 	public static readonly RULE_tagIt = 1;
 	public static readonly RULE_tagCy = 2;
@@ -89,13 +93,15 @@ export class ParserGrammarCypress extends Parser {
 		undefined, "'describe'", "'it'", "'beforeEach'", "'afterEach'", "'cy'", 
 		"'visit'", "'wait'", "'get'", "'url'", "'should'", "'within'", "'then'", 
 		"'expect'", "'to'", "'equal'", "'click'", "'type'", "'exist'", undefined, 
-		undefined, undefined, undefined, undefined, "'=>'", "','", "'.'", undefined, 
-		undefined, undefined, "'$'", "'innerText'", "'length'",
+		undefined, undefined, "'{'", "'}'", "'('", "')'", "'['", "']'", "'=>'", 
+		"','", "'.'", undefined, undefined, undefined, "'$'", "'.innerText'", 
+		"'.length'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
 		undefined, "DESCRIBE", "IT", "BEFORE_EACH", "AFTER_EACH", "CY", "VISIT", 
 		"WAIT", "GET", "URL", "SHOULD", "WITHIN", "THEN", "EXPECT", "TO", "EQUAL", 
 		"CLICK", "TYPE", "EXIST", "STRING", "NUMBER", "WS", "OPEN_KEY", "CLOSE_KEY", 
+		"OPEN_PARENTHESIS", "CLOSE_PARENTHESIS", "OPEN_BRACKET", "CLOSE_BRACKET", 
 		"ENTONCES", "COMMA", "PUNTO", "COMMENT1", "COMMENT2", "PARAMETER", "PESO", 
 		"INNERTEXT", "LENGTH",
 	];
@@ -136,15 +142,15 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 36;
 			this.match(ParserGrammarCypress.DESCRIBE);
 			this.state = 37;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 38;
 			this.match(ParserGrammarCypress.STRING);
 			this.state = 39;
 			this.match(ParserGrammarCypress.COMMA);
 			this.state = 40;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 41;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 42;
 			this.match(ParserGrammarCypress.ENTONCES);
 			this.state = 43;
@@ -186,7 +192,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 51;
 			this.match(ParserGrammarCypress.CLOSE_KEY);
 			this.state = 52;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -214,15 +220,15 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 54;
 			this.match(ParserGrammarCypress.IT);
 			this.state = 55;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 56;
 			this.match(ParserGrammarCypress.STRING);
 			this.state = 57;
 			this.match(ParserGrammarCypress.COMMA);
 			this.state = 58;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 59;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 60;
 			this.match(ParserGrammarCypress.ENTONCES);
 			this.state = 61;
@@ -244,7 +250,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 67;
 			this.match(ParserGrammarCypress.CLOSE_KEY);
 			this.state = 68;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -329,11 +335,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 78;
 			this.match(ParserGrammarCypress.GET);
 			this.state = 79;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 80;
 			this.match(ParserGrammarCypress.STRING);
 			this.state = 81;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 82;
 			this.match(ParserGrammarCypress.PUNTO);
 			}
@@ -400,11 +406,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 91;
 			this.match(ParserGrammarCypress.BEFORE_EACH);
 			this.state = 92;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 93;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 94;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 95;
 			this.match(ParserGrammarCypress.ENTONCES);
 			this.state = 96;
@@ -426,7 +432,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 102;
 			this.match(ParserGrammarCypress.CLOSE_KEY);
 			this.state = 103;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -453,11 +459,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 105;
 			this.match(ParserGrammarCypress.AFTER_EACH);
 			this.state = 106;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 107;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 108;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 109;
 			this.match(ParserGrammarCypress.ENTONCES);
 			this.state = 110;
@@ -465,7 +471,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 111;
 			this.match(ParserGrammarCypress.CLOSE_KEY);
 			this.state = 112;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -493,9 +499,9 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 114;
 			this.match(ParserGrammarCypress.CLICK);
 			this.state = 115;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 116;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 118;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
@@ -533,11 +539,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 120;
 			this.match(ParserGrammarCypress.TYPE);
 			this.state = 121;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 122;
 			this.match(ParserGrammarCypress.STRING);
 			this.state = 123;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 125;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
@@ -575,11 +581,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 127;
 			this.match(ParserGrammarCypress.WAIT);
 			this.state = 128;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 129;
 			this.match(ParserGrammarCypress.NUMBER);
 			this.state = 130;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 132;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
@@ -617,11 +623,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 134;
 			this.match(ParserGrammarCypress.VISIT);
 			this.state = 135;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 136;
 			this.match(ParserGrammarCypress.STRING);
 			this.state = 137;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 139;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
@@ -658,9 +664,9 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 141;
 			this.match(ParserGrammarCypress.URL);
 			this.state = 142;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 143;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 144;
 			this.match(ParserGrammarCypress.PUNTO);
 			{
@@ -694,9 +700,9 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 147;
 			this.match(ParserGrammarCypress.THEN);
 			this.state = 148;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 149;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 151;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
@@ -708,7 +714,7 @@ export class ParserGrammarCypress extends Parser {
 			}
 
 			this.state = 153;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 154;
 			this.match(ParserGrammarCypress.ENTONCES);
 			this.state = 155;
@@ -730,7 +736,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 162;
 			this.match(ParserGrammarCypress.CLOSE_KEY);
 			this.state = 163;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -758,7 +764,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 165;
 			this.match(ParserGrammarCypress.SHOULD);
 			this.state = 166;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			{
 			this.state = 167;
 			this.match(ParserGrammarCypress.STRING);
@@ -788,7 +794,7 @@ export class ParserGrammarCypress extends Parser {
 
 			}
 			this.state = 176;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -816,11 +822,11 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 178;
 			this.match(ParserGrammarCypress.WITHIN);
 			this.state = 179;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 180;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
 			this.state = 181;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			this.state = 182;
 			this.match(ParserGrammarCypress.ENTONCES);
 			this.state = 183;
@@ -842,7 +848,7 @@ export class ParserGrammarCypress extends Parser {
 			this.state = 189;
 			this.match(ParserGrammarCypress.CLOSE_KEY);
 			this.state = 190;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -863,40 +869,51 @@ export class ParserGrammarCypress extends Parser {
 	public expressionExpect(): ExpressionExpectContext {
 		let _localctx: ExpressionExpectContext = new ExpressionExpectContext(this._ctx, this.state);
 		this.enterRule(_localctx, 28, ParserGrammarCypress.RULE_expressionExpect);
+		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 192;
 			this.match(ParserGrammarCypress.EXPECT);
 			this.state = 193;
-			this.match(ParserGrammarCypress.OPEN_KEY);
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
+			{
 			this.state = 194;
 			this.tagParam();
-			this.state = 195;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			}
 			this.state = 196;
-			this.match(ParserGrammarCypress.PUNTO);
-			this.state = 197;
-			this.match(ParserGrammarCypress.TO);
+			this._errHandler.sync(this);
+			_la = this._input.LA(1);
+			if (_la === ParserGrammarCypress.OPEN_BRACKET) {
+				{
+				this.state = 195;
+				this.tagIndex();
+				}
+			}
+
 			this.state = 198;
+			_la = this._input.LA(1);
+			if (!(_la === ParserGrammarCypress.INNERTEXT || _la === ParserGrammarCypress.LENGTH)) {
+			this._errHandler.recoverInline(this);
+			} else {
+				if (this._input.LA(1) === Token.EOF) {
+					this.matchedEOF = true;
+				}
+
+				this._errHandler.reportMatch(this);
+				this.consume();
+			}
+			this.state = 199;
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
+			this.state = 200;
 			this.match(ParserGrammarCypress.PUNTO);
 			this.state = 201;
-			this._errHandler.sync(this);
-			switch (this._input.LA(1)) {
-			case ParserGrammarCypress.EQUAL:
-				{
-				this.state = 199;
-				this.tagEqual();
-				}
-				break;
-			case ParserGrammarCypress.EXIST:
-				{
-				this.state = 200;
-				this.match(ParserGrammarCypress.EXIST);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			this.match(ParserGrammarCypress.TO);
+			this.state = 202;
+			this.match(ParserGrammarCypress.PUNTO);
+			{
+			this.state = 203;
+			this.tagEqual();
 			}
 			}
 		}
@@ -922,11 +939,11 @@ export class ParserGrammarCypress extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 203;
-			this.match(ParserGrammarCypress.EQUAL);
-			this.state = 204;
-			this.match(ParserGrammarCypress.OPEN_KEY);
 			this.state = 205;
+			this.match(ParserGrammarCypress.EQUAL);
+			this.state = 206;
+			this.match(ParserGrammarCypress.OPEN_PARENTHESIS);
+			this.state = 207;
 			_la = this._input.LA(1);
 			if (!(_la === ParserGrammarCypress.STRING || _la === ParserGrammarCypress.NUMBER)) {
 			this._errHandler.recoverInline(this);
@@ -938,8 +955,8 @@ export class ParserGrammarCypress extends Parser {
 				this._errHandler.reportMatch(this);
 				this.consume();
 			}
-			this.state = 206;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.state = 208;
+			this.match(ParserGrammarCypress.CLOSE_PARENTHESIS);
 			}
 		}
 		catch (re) {
@@ -963,9 +980,9 @@ export class ParserGrammarCypress extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 208;
+			this.state = 210;
 			this.match(ParserGrammarCypress.PESO);
-			this.state = 209;
+			this.state = 211;
 			this.match(ParserGrammarCypress.PARAMETER);
 			}
 		}
@@ -990,12 +1007,12 @@ export class ParserGrammarCypress extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 211;
-			this.match(ParserGrammarCypress.OPEN_KEY);
-			this.state = 212;
-			this.match(ParserGrammarCypress.NUMBER);
 			this.state = 213;
-			this.match(ParserGrammarCypress.CLOSE_KEY);
+			this.match(ParserGrammarCypress.OPEN_BRACKET);
+			this.state = 214;
+			this.match(ParserGrammarCypress.NUMBER);
+			this.state = 215;
+			this.match(ParserGrammarCypress.CLOSE_BRACKET);
 			}
 		}
 		catch (re) {
@@ -1014,7 +1031,7 @@ export class ParserGrammarCypress extends Parser {
 	}
 
 	public static readonly _serializedATN: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\"\xDA\x04\x02" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03&\xDC\x04\x02" +
 		"\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07" +
 		"\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r\t\r\x04" +
 		"\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t\x12\x04" +
@@ -1034,77 +1051,78 @@ export class ParserGrammarCypress extends Parser {
 		"\v\r\x03\r\x03\r\x03\r\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0E" +
 		"\x03\x0E\x05\x0E\xAF\n\x0E\x05\x0E\xB1\n\x0E\x03\x0E\x03\x0E\x03\x0F\x03" +
 		"\x0F\x03\x0F\x03\x0F\x03\x0F\x03\x0F\x03\x0F\x06\x0F\xBC\n\x0F\r\x0F\x0E" +
-		"\x0F\xBD\x03\x0F\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x10\x03\x10\x03\x10" +
-		"\x03\x10\x03\x10\x03\x10\x03\x10\x05\x10\xCC\n\x10\x03\x11\x03\x11\x03" +
-		"\x11\x03\x11\x03\x11\x03\x12\x03\x12\x03\x12\x03\x13\x03\x13\x03\x13\x03" +
-		"\x13\x03\x13\x02\x02\x02\x14\x02\x02\x04\x02\x06\x02\b\x02\n\x02\f\x02" +
-		"\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02\x1E\x02" +
-		" \x02\"\x02$\x02\x02\x03\x03\x02\x15\x16\x02\xDD\x02&\x03\x02\x02\x02" +
-		"\x048\x03\x02\x02\x02\x06H\x03\x02\x02\x02\bP\x03\x02\x02\x02\n]\x03\x02" +
-		"\x02\x02\fk\x03\x02\x02\x02\x0Et\x03\x02\x02\x02\x10z\x03\x02\x02\x02" +
-		"\x12\x81\x03\x02\x02\x02\x14\x88\x03\x02\x02\x02\x16\x8F\x03\x02\x02\x02" +
-		"\x18\x95\x03\x02\x02\x02\x1A\xA7\x03\x02\x02\x02\x1C\xB4\x03\x02\x02\x02" +
-		"\x1E\xC2\x03\x02\x02\x02 \xCD\x03\x02\x02\x02\"\xD2\x03\x02\x02\x02$\xD5" +
-		"\x03\x02\x02\x02&\'\x07\x03\x02\x02\'(\x07\x18\x02\x02()\x07\x15\x02\x02" +
-		")*\x07\x1B\x02\x02*+\x07\x18\x02\x02+,\x07\x19\x02\x02,-\x07\x1A\x02\x02" +
-		"-1\x07\x18\x02\x02.2\x05\x04\x03\x02/2\x05\n\x06\x0202\x05\f\x07\x021" +
-		".\x03\x02\x02\x021/\x03\x02\x02\x0210\x03\x02\x02\x0223\x03\x02\x02\x02" +
-		"31\x03\x02\x02\x0234\x03\x02\x02\x0245\x03\x02\x02\x0256\x07\x19\x02\x02" +
-		"67\x07\x19\x02\x027\x03\x03\x02\x02\x0289\x07\x04\x02\x029:\x07\x18\x02" +
-		"\x02:;\x07\x15\x02\x02;<\x07\x1B\x02\x02<=\x07\x18\x02\x02=>\x07\x19\x02" +
-		"\x02>?\x07\x1A\x02\x02?A\x07\x18\x02\x02@B\x05\x06\x04\x02A@\x03\x02\x02" +
-		"\x02BC\x03\x02\x02\x02CA\x03\x02\x02\x02CD\x03\x02\x02\x02DE\x03\x02\x02" +
-		"\x02EF\x07\x19\x02\x02FG\x07\x19\x02\x02G\x05\x03\x02\x02\x02HI\x07\x07" +
-		"\x02\x02IN\x07\x1C\x02\x02JO\x05\b\x05\x02KO\x05\x12\n\x02LO\x05\x14\v" +
-		"\x02MO\x05\x16\f\x02NJ\x03\x02\x02\x02NK\x03\x02\x02\x02NL\x03\x02\x02" +
-		"\x02NM\x03\x02\x02\x02O\x07\x03\x02\x02\x02PQ\x07\n\x02\x02QR\x07\x18" +
-		"\x02\x02RS\x07\x15\x02\x02ST\x07\x19\x02\x02TU\x07\x1C\x02\x02U[\x03\x02" +
-		"\x02\x02V\\\x05\x0E\b\x02W\\\x05\x10\t\x02X\\\x05\x18\r\x02Y\\\x05\x1A" +
-		"\x0E\x02Z\\\x05\x1C\x0F\x02[V\x03\x02\x02\x02[W\x03\x02\x02\x02[X\x03" +
-		"\x02\x02\x02[Y\x03\x02\x02\x02[Z\x03\x02\x02\x02\\\t\x03\x02\x02\x02]" +
-		"^\x07\x05\x02\x02^_\x07\x18\x02\x02_`\x07\x18\x02\x02`a\x07\x19\x02\x02" +
-		"ab\x07\x1A\x02\x02bd\x07\x18\x02\x02ce\x05\x06\x04\x02dc\x03\x02\x02\x02" +
-		"ef\x03\x02\x02\x02fd\x03\x02\x02\x02fg\x03\x02\x02\x02gh\x03\x02\x02\x02" +
-		"hi\x07\x19\x02\x02ij\x07\x19\x02\x02j\v\x03\x02\x02\x02kl\x07\x06\x02" +
-		"\x02lm\x07\x18\x02\x02mn\x07\x18\x02\x02no\x07\x19\x02\x02op\x07\x1A\x02" +
-		"\x02pq\x07\x18\x02\x02qr\x07\x19\x02\x02rs\x07\x19\x02\x02s\r\x03\x02" +
-		"\x02\x02tu\x07\x12\x02\x02uv\x07\x18\x02\x02vx\x07\x19\x02\x02wy\x05\x18" +
-		"\r\x02xw\x03\x02\x02\x02xy\x03\x02\x02\x02y\x0F\x03\x02\x02\x02z{\x07" +
-		"\x13\x02\x02{|\x07\x18\x02\x02|}\x07\x15\x02\x02}\x7F\x07\x19\x02\x02" +
-		"~\x80\x05\x18\r\x02\x7F~\x03\x02\x02\x02\x7F\x80\x03\x02\x02\x02\x80\x11" +
-		"\x03\x02\x02\x02\x81\x82\x07\t\x02\x02\x82\x83\x07\x18\x02\x02\x83\x84" +
-		"\x07\x16\x02\x02\x84\x86\x07\x19\x02\x02\x85\x87\x05\x18\r\x02\x86\x85" +
-		"\x03\x02\x02\x02\x86\x87\x03\x02\x02\x02\x87\x13\x03\x02\x02\x02\x88\x89" +
-		"\x07\b\x02\x02\x89\x8A\x07\x18\x02\x02\x8A\x8B\x07\x15\x02\x02\x8B\x8D" +
-		"\x07\x19\x02\x02\x8C\x8E\x05\x18\r\x02\x8D\x8C\x03\x02\x02\x02\x8D\x8E" +
-		"\x03\x02\x02\x02\x8E\x15\x03\x02\x02\x02\x8F\x90\x07\v\x02\x02\x90\x91" +
-		"\x07\x18\x02\x02\x91\x92\x07\x19\x02\x02\x92\x93\x07\x1C\x02\x02\x93\x94" +
-		"\x05\x1A\x0E\x02\x94\x17\x03\x02\x02\x02\x95\x96\x07\x0E\x02\x02\x96\x97" +
-		"\x07\x18\x02\x02\x97\x99\x07\x18\x02\x02\x98\x9A\x05\"\x12\x02\x99\x98" +
-		"\x03\x02\x02\x02\x99\x9A\x03\x02\x02\x02\x9A\x9B\x03\x02\x02\x02\x9B\x9C" +
-		"\x07\x19\x02\x02\x9C\x9D\x07\x1A\x02\x02\x9D\xA1\x07\x18\x02\x02\x9E\xA0" +
-		"\x05\x1E\x10\x02\x9F\x9E\x03\x02\x02\x02\xA0\xA3\x03\x02\x02\x02\xA1\x9F" +
-		"\x03\x02\x02\x02\xA1\xA2\x03\x02\x02\x02\xA2\xA4\x03\x02\x02\x02\xA3\xA1" +
-		"\x03\x02\x02\x02\xA4\xA5\x07\x19\x02\x02\xA5\xA6\x07\x19\x02\x02\xA6\x19" +
-		"\x03\x02\x02\x02\xA7\xA8\x07\f\x02\x02\xA8\xA9\x07\x18\x02\x02\xA9\xB0" +
-		"\x07\x15\x02\x02\xAA\xAB\x07\x1B\x02\x02\xAB\xAE\x07\x15\x02\x02\xAC\xAD" +
-		"\x07\x1B\x02\x02\xAD\xAF\x07\x15\x02\x02\xAE\xAC\x03\x02\x02\x02\xAE\xAF" +
-		"\x03\x02\x02\x02\xAF\xB1\x03\x02\x02\x02\xB0\xAA\x03\x02\x02\x02\xB0\xB1" +
-		"\x03\x02\x02\x02\xB1\xB2\x03\x02\x02\x02\xB2\xB3\x07\x19\x02\x02\xB3\x1B" +
-		"\x03\x02\x02\x02\xB4\xB5\x07\r\x02\x02\xB5\xB6\x07\x18\x02\x02\xB6\xB7" +
-		"\x07\x18\x02\x02\xB7\xB8\x07\x19\x02\x02\xB8\xB9\x07\x1A\x02\x02\xB9\xBB" +
-		"\x07\x18\x02\x02\xBA\xBC\x05\x06\x04\x02\xBB\xBA\x03\x02\x02\x02\xBC\xBD" +
-		"\x03\x02\x02\x02\xBD\xBB\x03\x02\x02\x02\xBD\xBE\x03\x02\x02\x02\xBE\xBF" +
-		"\x03\x02\x02\x02\xBF\xC0\x07\x19\x02\x02\xC0\xC1\x07\x19\x02\x02\xC1\x1D" +
-		"\x03\x02\x02\x02\xC2\xC3\x07\x0F\x02\x02\xC3\xC4\x07\x18\x02\x02\xC4\xC5" +
-		"\x05\"\x12\x02\xC5\xC6\x07\x19\x02\x02\xC6\xC7\x07\x1C\x02\x02\xC7\xC8" +
-		"\x07\x10\x02\x02\xC8\xCB\x07\x1C\x02\x02\xC9\xCC\x05 \x11\x02\xCA\xCC" +
-		"\x07\x14\x02\x02\xCB\xC9\x03\x02\x02\x02\xCB\xCA\x03\x02\x02\x02\xCC\x1F" +
-		"\x03\x02\x02\x02\xCD\xCE\x07\x11\x02\x02\xCE\xCF\x07\x18\x02\x02\xCF\xD0" +
-		"\t\x02\x02\x02\xD0\xD1\x07\x19\x02\x02\xD1!\x03\x02\x02\x02\xD2\xD3\x07" +
-		" \x02\x02\xD3\xD4\x07\x1F\x02\x02\xD4#\x03\x02\x02\x02\xD5\xD6\x07\x18" +
-		"\x02\x02\xD6\xD7\x07\x16\x02\x02\xD7\xD8\x07\x19\x02\x02\xD8%\x03\x02" +
-		"\x02\x02\x1213CN[fx\x7F\x86\x8D\x99\xA1\xAE\xB0\xBD\xCB";
+		"\x0F\xBD\x03\x0F\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x10\x03\x10\x05\x10" +
+		"\xC7\n\x10\x03\x10\x03\x10\x03\x10\x03\x10\x03\x10\x03\x10\x03\x10\x03" +
+		"\x11\x03\x11\x03\x11\x03\x11\x03\x11\x03\x12\x03\x12\x03\x12\x03\x13\x03" +
+		"\x13\x03\x13\x03\x13\x03\x13\x02\x02\x02\x14\x02\x02\x04\x02\x06\x02\b" +
+		"\x02\n\x02\f\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02" +
+		"\x1C\x02\x1E\x02 \x02\"\x02$\x02\x02\x04\x03\x02%&\x03\x02\x15\x16\x02" +
+		"\xDF\x02&\x03\x02\x02\x02\x048\x03\x02\x02\x02\x06H\x03\x02\x02\x02\b" +
+		"P\x03\x02\x02\x02\n]\x03\x02\x02\x02\fk\x03\x02\x02\x02\x0Et\x03\x02\x02" +
+		"\x02\x10z\x03\x02\x02\x02\x12\x81\x03\x02\x02\x02\x14\x88\x03\x02\x02" +
+		"\x02\x16\x8F\x03\x02\x02\x02\x18\x95\x03\x02\x02\x02\x1A\xA7\x03\x02\x02" +
+		"\x02\x1C\xB4\x03\x02\x02\x02\x1E\xC2\x03\x02\x02\x02 \xCF\x03\x02\x02" +
+		"\x02\"\xD4\x03\x02\x02\x02$\xD7\x03\x02\x02\x02&\'\x07\x03\x02\x02\'(" +
+		"\x07\x1A\x02\x02()\x07\x15\x02\x02)*\x07\x1F\x02\x02*+\x07\x1A\x02\x02" +
+		"+,\x07\x1B\x02\x02,-\x07\x1E\x02\x02-1\x07\x18\x02\x02.2\x05\x04\x03\x02" +
+		"/2\x05\n\x06\x0202\x05\f\x07\x021.\x03\x02\x02\x021/\x03\x02\x02\x021" +
+		"0\x03\x02\x02\x0223\x03\x02\x02\x0231\x03\x02\x02\x0234\x03\x02\x02\x02" +
+		"45\x03\x02\x02\x0256\x07\x19\x02\x0267\x07\x1B\x02\x027\x03\x03\x02\x02" +
+		"\x0289\x07\x04\x02\x029:\x07\x1A\x02\x02:;\x07\x15\x02\x02;<\x07\x1F\x02" +
+		"\x02<=\x07\x1A\x02\x02=>\x07\x1B\x02\x02>?\x07\x1E\x02\x02?A\x07\x18\x02" +
+		"\x02@B\x05\x06\x04\x02A@\x03\x02\x02\x02BC\x03\x02\x02\x02CA\x03\x02\x02" +
+		"\x02CD\x03\x02\x02\x02DE\x03\x02\x02\x02EF\x07\x19\x02\x02FG\x07\x1B\x02" +
+		"\x02G\x05\x03\x02\x02\x02HI\x07\x07\x02\x02IN\x07 \x02\x02JO\x05\b\x05" +
+		"\x02KO\x05\x12\n\x02LO\x05\x14\v\x02MO\x05\x16\f\x02NJ\x03\x02\x02\x02" +
+		"NK\x03\x02\x02\x02NL\x03\x02\x02\x02NM\x03\x02\x02\x02O\x07\x03\x02\x02" +
+		"\x02PQ\x07\n\x02\x02QR\x07\x1A\x02\x02RS\x07\x15\x02\x02ST\x07\x1B\x02" +
+		"\x02TU\x07 \x02\x02U[\x03\x02\x02\x02V\\\x05\x0E\b\x02W\\\x05\x10\t\x02" +
+		"X\\\x05\x18\r\x02Y\\\x05\x1A\x0E\x02Z\\\x05\x1C\x0F\x02[V\x03\x02\x02" +
+		"\x02[W\x03\x02\x02\x02[X\x03\x02\x02\x02[Y\x03\x02\x02\x02[Z\x03\x02\x02" +
+		"\x02\\\t\x03\x02\x02\x02]^\x07\x05\x02\x02^_\x07\x1A\x02\x02_`\x07\x1A" +
+		"\x02\x02`a\x07\x1B\x02\x02ab\x07\x1E\x02\x02bd\x07\x18\x02\x02ce\x05\x06" +
+		"\x04\x02dc\x03\x02\x02\x02ef\x03\x02\x02\x02fd\x03\x02\x02\x02fg\x03\x02" +
+		"\x02\x02gh\x03\x02\x02\x02hi\x07\x19\x02\x02ij\x07\x1B\x02\x02j\v\x03" +
+		"\x02\x02\x02kl\x07\x06\x02\x02lm\x07\x1A\x02\x02mn\x07\x1A\x02\x02no\x07" +
+		"\x1B\x02\x02op\x07\x1E\x02\x02pq\x07\x18\x02\x02qr\x07\x19\x02\x02rs\x07" +
+		"\x1B\x02\x02s\r\x03\x02\x02\x02tu\x07\x12\x02\x02uv\x07\x1A\x02\x02vx" +
+		"\x07\x1B\x02\x02wy\x05\x18\r\x02xw\x03\x02\x02\x02xy\x03\x02\x02\x02y" +
+		"\x0F\x03\x02\x02\x02z{\x07\x13\x02\x02{|\x07\x1A\x02\x02|}\x07\x15\x02" +
+		"\x02}\x7F\x07\x1B\x02\x02~\x80\x05\x18\r\x02\x7F~\x03\x02\x02\x02\x7F" +
+		"\x80\x03\x02\x02\x02\x80\x11\x03\x02\x02\x02\x81\x82\x07\t\x02\x02\x82" +
+		"\x83\x07\x1A\x02\x02\x83\x84\x07\x16\x02\x02\x84\x86\x07\x1B\x02\x02\x85" +
+		"\x87\x05\x18\r\x02\x86\x85\x03\x02\x02\x02\x86\x87\x03\x02\x02\x02\x87" +
+		"\x13\x03\x02\x02\x02\x88\x89\x07\b\x02\x02\x89\x8A\x07\x1A\x02\x02\x8A" +
+		"\x8B\x07\x15\x02\x02\x8B\x8D\x07\x1B\x02\x02\x8C\x8E\x05\x18\r\x02\x8D" +
+		"\x8C\x03\x02\x02\x02\x8D\x8E\x03\x02\x02\x02\x8E\x15\x03\x02\x02\x02\x8F" +
+		"\x90\x07\v\x02\x02\x90\x91\x07\x1A\x02\x02\x91\x92\x07\x1B\x02\x02\x92" +
+		"\x93\x07 \x02\x02\x93\x94\x05\x1A\x0E\x02\x94\x17\x03\x02\x02\x02\x95" +
+		"\x96\x07\x0E\x02\x02\x96\x97\x07\x1A\x02\x02\x97\x99\x07\x1A\x02\x02\x98" +
+		"\x9A\x05\"\x12\x02\x99\x98\x03\x02\x02\x02\x99\x9A\x03\x02\x02\x02\x9A" +
+		"\x9B\x03\x02\x02\x02\x9B\x9C\x07\x1B\x02\x02\x9C\x9D\x07\x1E\x02\x02\x9D" +
+		"\xA1\x07\x18\x02\x02\x9E\xA0\x05\x1E\x10\x02\x9F\x9E\x03\x02\x02\x02\xA0" +
+		"\xA3\x03\x02\x02\x02\xA1\x9F\x03\x02\x02\x02\xA1\xA2\x03\x02\x02\x02\xA2" +
+		"\xA4\x03\x02\x02\x02\xA3\xA1\x03\x02\x02\x02\xA4\xA5\x07\x19\x02\x02\xA5" +
+		"\xA6\x07\x1B\x02\x02\xA6\x19\x03\x02\x02\x02\xA7\xA8\x07\f\x02\x02\xA8" +
+		"\xA9\x07\x1A\x02\x02\xA9\xB0\x07\x15\x02\x02\xAA\xAB\x07\x1F\x02\x02\xAB" +
+		"\xAE\x07\x15\x02\x02\xAC\xAD\x07\x1F\x02\x02\xAD\xAF\x07\x15\x02\x02\xAE" +
+		"\xAC\x03\x02\x02\x02\xAE\xAF\x03\x02\x02\x02\xAF\xB1\x03\x02\x02\x02\xB0" +
+		"\xAA\x03\x02\x02\x02\xB0\xB1\x03\x02\x02\x02\xB1\xB2\x03\x02\x02\x02\xB2" +
+		"\xB3\x07\x1B\x02\x02\xB3\x1B\x03\x02\x02\x02\xB4\xB5\x07\r\x02\x02\xB5" +
+		"\xB6\x07\x1A\x02\x02\xB6\xB7\x07\x1A\x02\x02\xB7\xB8\x07\x1B\x02\x02\xB8" +
+		"\xB9\x07\x1E\x02\x02\xB9\xBB\x07\x18\x02\x02\xBA\xBC\x05\x06\x04\x02\xBB" +
+		"\xBA\x03\x02\x02\x02\xBC\xBD\x03\x02\x02\x02\xBD\xBB\x03\x02\x02\x02\xBD" +
+		"\xBE\x03\x02\x02\x02\xBE\xBF\x03\x02\x02\x02\xBF\xC0\x07\x19\x02\x02\xC0" +
+		"\xC1\x07\x1B\x02\x02\xC1\x1D\x03\x02\x02\x02\xC2\xC3\x07\x0F\x02\x02\xC3" +
+		"\xC4\x07\x1A\x02\x02\xC4\xC6\x05\"\x12\x02\xC5\xC7\x05$\x13\x02\xC6\xC5" +
+		"\x03\x02\x02\x02\xC6\xC7\x03\x02\x02\x02\xC7\xC8\x03\x02\x02\x02\xC8\xC9" +
+		"\t\x02\x02\x02\xC9\xCA\x07\x1B\x02\x02\xCA\xCB\x07 \x02\x02\xCB\xCC\x07" +
+		"\x10\x02\x02\xCC\xCD\x07 \x02\x02\xCD\xCE\x05 \x11\x02\xCE\x1F\x03\x02" +
+		"\x02\x02\xCF\xD0\x07\x11\x02\x02\xD0\xD1\x07\x1A\x02\x02\xD1\xD2\t\x03" +
+		"\x02\x02\xD2\xD3\x07\x1B\x02\x02\xD3!\x03\x02\x02\x02\xD4\xD5\x07$\x02" +
+		"\x02\xD5\xD6\x07#\x02\x02\xD6#\x03\x02\x02\x02\xD7\xD8\x07\x1C\x02\x02" +
+		"\xD8\xD9\x07\x16\x02\x02\xD9\xDA\x07\x1D\x02\x02\xDA%\x03\x02\x02\x02" +
+		"\x1213CN[fx\x7F\x86\x8D\x99\xA1\xAE\xB0\xBD\xC6";
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!ParserGrammarCypress.__ATN) {
@@ -1118,27 +1136,29 @@ export class ParserGrammarCypress extends Parser {
 
 export class TestBlockContext extends ParserRuleContext {
 	public DESCRIBE(): TerminalNode { return this.getToken(ParserGrammarCypress.DESCRIBE, 0); }
-	public OPEN_KEY(): TerminalNode[];
-	public OPEN_KEY(i: number): TerminalNode;
-	public OPEN_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public OPEN_PARENTHESIS(): TerminalNode[];
+	public OPEN_PARENTHESIS(i: number): TerminalNode;
+	public OPEN_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.OPEN_KEY);
+			return this.getTokens(ParserGrammarCypress.OPEN_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.OPEN_KEY, i);
+			return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, i);
 		}
 	}
 	public STRING(): TerminalNode { return this.getToken(ParserGrammarCypress.STRING, 0); }
 	public COMMA(): TerminalNode { return this.getToken(ParserGrammarCypress.COMMA, 0); }
-	public CLOSE_KEY(): TerminalNode[];
-	public CLOSE_KEY(i: number): TerminalNode;
-	public CLOSE_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public CLOSE_PARENTHESIS(): TerminalNode[];
+	public CLOSE_PARENTHESIS(i: number): TerminalNode;
+	public CLOSE_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.CLOSE_KEY);
+			return this.getTokens(ParserGrammarCypress.CLOSE_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.CLOSE_KEY, i);
+			return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, i);
 		}
 	}
 	public ENTONCES(): TerminalNode { return this.getToken(ParserGrammarCypress.ENTONCES, 0); }
+	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
 	public tagIt(): TagItContext[];
 	public tagIt(i: number): TagItContext;
 	public tagIt(i?: number): TagItContext | TagItContext[] {
@@ -1196,27 +1216,29 @@ export class TestBlockContext extends ParserRuleContext {
 
 export class TagItContext extends ParserRuleContext {
 	public IT(): TerminalNode { return this.getToken(ParserGrammarCypress.IT, 0); }
-	public OPEN_KEY(): TerminalNode[];
-	public OPEN_KEY(i: number): TerminalNode;
-	public OPEN_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public OPEN_PARENTHESIS(): TerminalNode[];
+	public OPEN_PARENTHESIS(i: number): TerminalNode;
+	public OPEN_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.OPEN_KEY);
+			return this.getTokens(ParserGrammarCypress.OPEN_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.OPEN_KEY, i);
+			return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, i);
 		}
 	}
 	public STRING(): TerminalNode { return this.getToken(ParserGrammarCypress.STRING, 0); }
 	public COMMA(): TerminalNode { return this.getToken(ParserGrammarCypress.COMMA, 0); }
-	public CLOSE_KEY(): TerminalNode[];
-	public CLOSE_KEY(i: number): TerminalNode;
-	public CLOSE_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public CLOSE_PARENTHESIS(): TerminalNode[];
+	public CLOSE_PARENTHESIS(i: number): TerminalNode;
+	public CLOSE_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.CLOSE_KEY);
+			return this.getTokens(ParserGrammarCypress.CLOSE_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.CLOSE_KEY, i);
+			return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, i);
 		}
 	}
 	public ENTONCES(): TerminalNode { return this.getToken(ParserGrammarCypress.ENTONCES, 0); }
+	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
 	public tagCy(): TagCyContext[];
 	public tagCy(i: number): TagCyContext;
 	public tagCy(i?: number): TagCyContext | TagCyContext[] {
@@ -1299,9 +1321,9 @@ export class TagCyContext extends ParserRuleContext {
 
 export class TagGetContext extends ParserRuleContext {
 	public GET(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.GET, 0); }
-	public OPEN_KEY(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
 	public STRING(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.STRING, 0); }
-	public CLOSE_KEY(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public PUNTO(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.PUNTO, 0); }
 	public tagClick(): TagClickContext | undefined {
 		return this.tryGetRuleContext(0, TagClickContext);
@@ -1348,25 +1370,27 @@ export class TagGetContext extends ParserRuleContext {
 
 export class TagBeforeEachContext extends ParserRuleContext {
 	public BEFORE_EACH(): TerminalNode { return this.getToken(ParserGrammarCypress.BEFORE_EACH, 0); }
-	public OPEN_KEY(): TerminalNode[];
-	public OPEN_KEY(i: number): TerminalNode;
-	public OPEN_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public OPEN_PARENTHESIS(): TerminalNode[];
+	public OPEN_PARENTHESIS(i: number): TerminalNode;
+	public OPEN_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.OPEN_KEY);
+			return this.getTokens(ParserGrammarCypress.OPEN_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.OPEN_KEY, i);
+			return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, i);
 		}
 	}
-	public CLOSE_KEY(): TerminalNode[];
-	public CLOSE_KEY(i: number): TerminalNode;
-	public CLOSE_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public CLOSE_PARENTHESIS(): TerminalNode[];
+	public CLOSE_PARENTHESIS(i: number): TerminalNode;
+	public CLOSE_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.CLOSE_KEY);
+			return this.getTokens(ParserGrammarCypress.CLOSE_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.CLOSE_KEY, i);
+			return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, i);
 		}
 	}
 	public ENTONCES(): TerminalNode { return this.getToken(ParserGrammarCypress.ENTONCES, 0); }
+	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
 	public tagCy(): TagCyContext[];
 	public tagCy(i: number): TagCyContext;
 	public tagCy(i?: number): TagCyContext | TagCyContext[] {
@@ -1406,25 +1430,27 @@ export class TagBeforeEachContext extends ParserRuleContext {
 
 export class TagAfterEachContext extends ParserRuleContext {
 	public AFTER_EACH(): TerminalNode { return this.getToken(ParserGrammarCypress.AFTER_EACH, 0); }
-	public OPEN_KEY(): TerminalNode[];
-	public OPEN_KEY(i: number): TerminalNode;
-	public OPEN_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public OPEN_PARENTHESIS(): TerminalNode[];
+	public OPEN_PARENTHESIS(i: number): TerminalNode;
+	public OPEN_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.OPEN_KEY);
+			return this.getTokens(ParserGrammarCypress.OPEN_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.OPEN_KEY, i);
+			return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, i);
 		}
 	}
-	public CLOSE_KEY(): TerminalNode[];
-	public CLOSE_KEY(i: number): TerminalNode;
-	public CLOSE_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public CLOSE_PARENTHESIS(): TerminalNode[];
+	public CLOSE_PARENTHESIS(i: number): TerminalNode;
+	public CLOSE_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.CLOSE_KEY);
+			return this.getTokens(ParserGrammarCypress.CLOSE_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.CLOSE_KEY, i);
+			return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, i);
 		}
 	}
 	public ENTONCES(): TerminalNode { return this.getToken(ParserGrammarCypress.ENTONCES, 0); }
+	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
@@ -1455,8 +1481,8 @@ export class TagAfterEachContext extends ParserRuleContext {
 
 export class TagClickContext extends ParserRuleContext {
 	public CLICK(): TerminalNode { return this.getToken(ParserGrammarCypress.CLICK, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public tagThen(): TagThenContext | undefined {
 		return this.tryGetRuleContext(0, TagThenContext);
 	}
@@ -1490,9 +1516,9 @@ export class TagClickContext extends ParserRuleContext {
 
 export class TagTypeContext extends ParserRuleContext {
 	public TYPE(): TerminalNode { return this.getToken(ParserGrammarCypress.TYPE, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
 	public STRING(): TerminalNode { return this.getToken(ParserGrammarCypress.STRING, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public tagThen(): TagThenContext | undefined {
 		return this.tryGetRuleContext(0, TagThenContext);
 	}
@@ -1526,9 +1552,9 @@ export class TagTypeContext extends ParserRuleContext {
 
 export class TagWaitContext extends ParserRuleContext {
 	public WAIT(): TerminalNode { return this.getToken(ParserGrammarCypress.WAIT, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
 	public NUMBER(): TerminalNode { return this.getToken(ParserGrammarCypress.NUMBER, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public tagThen(): TagThenContext | undefined {
 		return this.tryGetRuleContext(0, TagThenContext);
 	}
@@ -1562,9 +1588,9 @@ export class TagWaitContext extends ParserRuleContext {
 
 export class TagVisitContext extends ParserRuleContext {
 	public VISIT(): TerminalNode { return this.getToken(ParserGrammarCypress.VISIT, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
 	public STRING(): TerminalNode { return this.getToken(ParserGrammarCypress.STRING, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public tagThen(): TagThenContext | undefined {
 		return this.tryGetRuleContext(0, TagThenContext);
 	}
@@ -1598,8 +1624,8 @@ export class TagVisitContext extends ParserRuleContext {
 
 export class TagUrlContext extends ParserRuleContext {
 	public URL(): TerminalNode { return this.getToken(ParserGrammarCypress.URL, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public PUNTO(): TerminalNode { return this.getToken(ParserGrammarCypress.PUNTO, 0); }
 	public tagShould(): TagShouldContext | undefined {
 		return this.tryGetRuleContext(0, TagShouldContext);
@@ -1634,25 +1660,27 @@ export class TagUrlContext extends ParserRuleContext {
 
 export class TagThenContext extends ParserRuleContext {
 	public THEN(): TerminalNode { return this.getToken(ParserGrammarCypress.THEN, 0); }
-	public OPEN_KEY(): TerminalNode[];
-	public OPEN_KEY(i: number): TerminalNode;
-	public OPEN_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public OPEN_PARENTHESIS(): TerminalNode[];
+	public OPEN_PARENTHESIS(i: number): TerminalNode;
+	public OPEN_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.OPEN_KEY);
+			return this.getTokens(ParserGrammarCypress.OPEN_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.OPEN_KEY, i);
+			return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, i);
 		}
 	}
-	public CLOSE_KEY(): TerminalNode[];
-	public CLOSE_KEY(i: number): TerminalNode;
-	public CLOSE_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public CLOSE_PARENTHESIS(): TerminalNode[];
+	public CLOSE_PARENTHESIS(i: number): TerminalNode;
+	public CLOSE_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.CLOSE_KEY);
+			return this.getTokens(ParserGrammarCypress.CLOSE_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.CLOSE_KEY, i);
+			return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, i);
 		}
 	}
 	public ENTONCES(): TerminalNode { return this.getToken(ParserGrammarCypress.ENTONCES, 0); }
+	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
 	public tagParam(): TagParamContext | undefined {
 		return this.tryGetRuleContext(0, TagParamContext);
 	}
@@ -1695,8 +1723,8 @@ export class TagThenContext extends ParserRuleContext {
 
 export class TagShouldContext extends ParserRuleContext {
 	public SHOULD(): TerminalNode { return this.getToken(ParserGrammarCypress.SHOULD, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public STRING(): TerminalNode[];
 	public STRING(i: number): TerminalNode;
 	public STRING(i?: number): TerminalNode | TerminalNode[] {
@@ -1745,25 +1773,27 @@ export class TagShouldContext extends ParserRuleContext {
 
 export class TagWithinContext extends ParserRuleContext {
 	public WITHIN(): TerminalNode { return this.getToken(ParserGrammarCypress.WITHIN, 0); }
-	public OPEN_KEY(): TerminalNode[];
-	public OPEN_KEY(i: number): TerminalNode;
-	public OPEN_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public OPEN_PARENTHESIS(): TerminalNode[];
+	public OPEN_PARENTHESIS(i: number): TerminalNode;
+	public OPEN_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.OPEN_KEY);
+			return this.getTokens(ParserGrammarCypress.OPEN_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.OPEN_KEY, i);
+			return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, i);
 		}
 	}
-	public CLOSE_KEY(): TerminalNode[];
-	public CLOSE_KEY(i: number): TerminalNode;
-	public CLOSE_KEY(i?: number): TerminalNode | TerminalNode[] {
+	public CLOSE_PARENTHESIS(): TerminalNode[];
+	public CLOSE_PARENTHESIS(i: number): TerminalNode;
+	public CLOSE_PARENTHESIS(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(ParserGrammarCypress.CLOSE_KEY);
+			return this.getTokens(ParserGrammarCypress.CLOSE_PARENTHESIS);
 		} else {
-			return this.getToken(ParserGrammarCypress.CLOSE_KEY, i);
+			return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, i);
 		}
 	}
 	public ENTONCES(): TerminalNode { return this.getToken(ParserGrammarCypress.ENTONCES, 0); }
+	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
 	public tagCy(): TagCyContext[];
 	public tagCy(i: number): TagCyContext;
 	public tagCy(i?: number): TagCyContext | TagCyContext[] {
@@ -1803,11 +1833,8 @@ export class TagWithinContext extends ParserRuleContext {
 
 export class ExpressionExpectContext extends ParserRuleContext {
 	public EXPECT(): TerminalNode { return this.getToken(ParserGrammarCypress.EXPECT, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
-	public tagParam(): TagParamContext {
-		return this.getRuleContext(0, TagParamContext);
-	}
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public PUNTO(): TerminalNode[];
 	public PUNTO(i: number): TerminalNode;
 	public PUNTO(i?: number): TerminalNode | TerminalNode[] {
@@ -1818,10 +1845,17 @@ export class ExpressionExpectContext extends ParserRuleContext {
 		}
 	}
 	public TO(): TerminalNode { return this.getToken(ParserGrammarCypress.TO, 0); }
+	public LENGTH(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.LENGTH, 0); }
+	public INNERTEXT(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.INNERTEXT, 0); }
+	public tagParam(): TagParamContext | undefined {
+		return this.tryGetRuleContext(0, TagParamContext);
+	}
 	public tagEqual(): TagEqualContext | undefined {
 		return this.tryGetRuleContext(0, TagEqualContext);
 	}
-	public EXIST(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.EXIST, 0); }
+	public tagIndex(): TagIndexContext | undefined {
+		return this.tryGetRuleContext(0, TagIndexContext);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
@@ -1852,8 +1886,8 @@ export class ExpressionExpectContext extends ParserRuleContext {
 
 export class TagEqualContext extends ParserRuleContext {
 	public EQUAL(): TerminalNode { return this.getToken(ParserGrammarCypress.EQUAL, 0); }
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_PARENTHESIS, 0); }
+	public CLOSE_PARENTHESIS(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_PARENTHESIS, 0); }
 	public STRING(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.STRING, 0); }
 	public NUMBER(): TerminalNode | undefined { return this.tryGetToken(ParserGrammarCypress.NUMBER, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
@@ -1916,9 +1950,9 @@ export class TagParamContext extends ParserRuleContext {
 
 
 export class TagIndexContext extends ParserRuleContext {
-	public OPEN_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_KEY, 0); }
+	public OPEN_BRACKET(): TerminalNode { return this.getToken(ParserGrammarCypress.OPEN_BRACKET, 0); }
 	public NUMBER(): TerminalNode { return this.getToken(ParserGrammarCypress.NUMBER, 0); }
-	public CLOSE_KEY(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_KEY, 0); }
+	public CLOSE_BRACKET(): TerminalNode { return this.getToken(ParserGrammarCypress.CLOSE_BRACKET, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}

@@ -35,28 +35,23 @@ export function parseAndGetSyntaxErrors(code: string): ICustomErrorListener[] {
     return errors;
 }
 
-const input = `
-
-describe('Testing basic Angular registration', () => {
+const input = `describe('Testing basic Angular registration', () => {
     beforeEach(()=>{
         cy.visit('https://angular-6-registration-login-example.stackblitz.io/register')
          cy.wait(7000)
          cy.get('button').click()
      })
-   
-   
      it('Test links between registration and login page', () => {
          cy.get('a.btn.btn-link').click()
          cy.url().should('eq', 'https://angular-6-registration-login-example.stackblitz.io/login')
          cy.get('a.btn.btn-link').click()
          cy.url().should('eq', 'https://angular-6-registration-login-example.stackblitz.io/register')
      })
-   
      it('Test form feedback', () => {
          cy.get('button.btn.btn-primary').click()
          cy.wait(1000)
          cy.get('div.invalid-feedback').then(($divs)=>{
-             expect($divs).to.equal(4)
+             expect($divs.length).to.equal(4)
          })
      })
    
@@ -82,8 +77,8 @@ describe('Testing basic Angular registration', () => {
    
          cy.wait(1000)
          //logged in
-         cy.get('h1')..then(($header)=>{
-             expect($header).to.equal('Hi Monitor!')
+         cy.get('h1').then(($header)=>{
+             expect($header[0].innerText).to.equal('Hi Monitor!')
          })
          
          
@@ -108,7 +103,7 @@ else{
     console.log("Se encontraron errores:");
 
     errors.forEach((error, index) => {
-    console.log(`Error ${index + 1}: ${error.message} - {error.line}:${error.startLineNumber}}`);
+    console.log(`Error ${index + 1}: columna inicial ${error.startColumn}- Columna final ${error.endColumn} - {error.line}:${error.startLineNumber} -  ${error.message}`);
     // Puedes acceder a más información del error, si está disponible, a través de otras propiedades del objeto `error`.
   });
 }
