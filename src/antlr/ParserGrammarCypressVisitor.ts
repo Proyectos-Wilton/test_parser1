@@ -17,8 +17,18 @@ import { TagVisitContext } from "./ParserGrammarCypress";
 import { TagUrlContext } from "./ParserGrammarCypress";
 import { TagOnContext } from "./ParserGrammarCypress";
 import { TagInterceptContext } from "./ParserGrammarCypress";
+import { TagRequestContext } from "./ParserGrammarCypress";
+import { TagTaskContext } from "./ParserGrammarCypress";
+import { TagGetCookieContext } from "./ParserGrammarCypress";
+import { TagSubmitContext } from "./ParserGrammarCypress";
+import { TagFixtureContext } from "./ParserGrammarCypress";
+import { TagClickLinkContext } from "./ParserGrammarCypress";
 import { TagWindowContext } from "./ParserGrammarCypress";
+import { TagSelectorContext } from "./ParserGrammarCypress";
+import { TagNameContext } from "./ParserGrammarCypress";
 import { TagSelectContext } from "./ParserGrammarCypress";
+import { TagScreenshotContext } from "./ParserGrammarCypress";
+import { TagAttachFileContext } from "./ParserGrammarCypress";
 import { TagPauseContext } from "./ParserGrammarCypress";
 import { TagTittleContext } from "./ParserGrammarCypress";
 import { TagFunctionContext } from "./ParserGrammarCypress";
@@ -158,6 +168,48 @@ export interface ParserGrammarCypressVisitor<Result> extends ParseTreeVisitor<Re
 	visitTagIntercept?: (ctx: TagInterceptContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagRequest`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagRequest?: (ctx: TagRequestContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagTask`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagTask?: (ctx: TagTaskContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagGetCookie`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagGetCookie?: (ctx: TagGetCookieContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagSubmit`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagSubmit?: (ctx: TagSubmitContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagFixture`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagFixture?: (ctx: TagFixtureContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagClickLink`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagClickLink?: (ctx: TagClickLinkContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `ParserGrammarCypress.tagWindow`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -165,11 +217,39 @@ export interface ParserGrammarCypressVisitor<Result> extends ParseTreeVisitor<Re
 	visitTagWindow?: (ctx: TagWindowContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagSelector`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagSelector?: (ctx: TagSelectorContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagName?: (ctx: TagNameContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `ParserGrammarCypress.tagSelect`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitTagSelect?: (ctx: TagSelectContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagScreenshot`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagScreenshot?: (ctx: TagScreenshotContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `ParserGrammarCypress.tagAttachFile`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTagAttachFile?: (ctx: TagAttachFileContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `ParserGrammarCypress.tagPause`.

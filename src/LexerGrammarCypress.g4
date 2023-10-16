@@ -32,10 +32,21 @@ PAUSE: 'pause';
 SELECT: 'select';
 ITS: 'its';
 INTERCEPT: 'intercept';
+TASK: 'task';
+SCREENSHOT:'screenshot';
+FIXTURE: 'fixture';
+CLICK_LINK: 'clickLink';
+REQUEST: 'request';
+SUBMIT: 'submit';
+GET_COOKIE: 'getCookie';
+
+
 
 SHOULD: 'should';
 WITHIN: 'within';
 SKIPP: '.skip';
+
+ATTACH_FILE:'attachFile';
 
 AND: 'and';
 WRAP: 'wrap';
@@ -52,7 +63,7 @@ TYPE: 'type';
 EXIST: 'exist';
 FIRST: 'first';
 DATE_STRING: 'dateString';
-
+NAMEN: 'name:';
 
 //STRING: '\'' ~'\''* '\'' | '"' ~'"'* '"';
 //STRING: '\'' ~'\''* '\'' | '"' ~'"'* '"' | '`' ~'`'* '`';
@@ -83,7 +94,7 @@ PARAMETER: [a-zA-Z_][a-zA-Z_0-9]*;
 PESO: '$';
 INNERTEXT:'.innerText';
 LENGTH: '.length';
-
+SELECTOR: 'selector:';
 WHICH: 'which:';
 TARGET: 'target:';
 VALUE: 'value:';
