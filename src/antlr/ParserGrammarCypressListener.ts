@@ -4,6 +4,7 @@
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
 import { TestBlockContext } from "./ParserGrammarCypress";
+import { TagContextContext } from "./ParserGrammarCypress";
 import { TagItContext } from "./ParserGrammarCypress";
 import { TagCyContext } from "./ParserGrammarCypress";
 import { TagGetContext } from "./ParserGrammarCypress";
@@ -14,20 +15,40 @@ import { TagTypeContext } from "./ParserGrammarCypress";
 import { TagWaitContext } from "./ParserGrammarCypress";
 import { TagVisitContext } from "./ParserGrammarCypress";
 import { TagUrlContext } from "./ParserGrammarCypress";
+import { TagOnContext } from "./ParserGrammarCypress";
+import { TagInterceptContext } from "./ParserGrammarCypress";
+import { TagWindowContext } from "./ParserGrammarCypress";
+import { TagSelectContext } from "./ParserGrammarCypress";
+import { TagPauseContext } from "./ParserGrammarCypress";
+import { TagTittleContext } from "./ParserGrammarCypress";
+import { TagFunctionContext } from "./ParserGrammarCypress";
+import { TagFindContext } from "./ParserGrammarCypress";
+import { TagStubContext } from "./ParserGrammarCypress";
 import { TagContainsContext } from "./ParserGrammarCypress";
 import { TagInjectAxeContext } from "./ParserGrammarCypress";
 import { TagCheckA11yContext } from "./ParserGrammarCypress";
+import { TagCheckContext } from "./ParserGrammarCypress";
+import { TagItsContext } from "./ParserGrammarCypress";
+import { TagInvokeContext } from "./ParserGrammarCypress";
+import { TagWhichContext } from "./ParserGrammarCypress";
+import { TagTargetContext } from "./ParserGrammarCypress";
+import { TagValueContext } from "./ParserGrammarCypress";
+import { TagLocationContext } from "./ParserGrammarCypress";
+import { TagFirstContext } from "./ParserGrammarCypress";
+import { TagEqContext } from "./ParserGrammarCypress";
 import { TagThenContext } from "./ParserGrammarCypress";
 import { TagShouldContext } from "./ParserGrammarCypress";
 import { TagWithinContext } from "./ParserGrammarCypress";
+import { TagAndContext } from "./ParserGrammarCypress";
+import { TagDataStringContext } from "./ParserGrammarCypress";
+import { TagWrapContext } from "./ParserGrammarCypress";
 import { ExpressionExpectContext } from "./ParserGrammarCypress";
 import { TagEqualContext } from "./ParserGrammarCypress";
 import { TagParamContext } from "./ParserGrammarCypress";
 import { TagIndexContext } from "./ParserGrammarCypress";
-import { TagPrintContext } from "./ParserGrammarCypress";
+import { TagAsContext } from "./ParserGrammarCypress";
 import { TagEventOnBeforeLoadContext } from "./ParserGrammarCypress";
 import { TagEventListenerContext } from "./ParserGrammarCypress";
-import { TagConstantContext } from "./ParserGrammarCypress";
 
 
 /**
@@ -45,6 +66,17 @@ export interface ParserGrammarCypressListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitTestBlock?: (ctx: TestBlockContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagContext`.
+	 * @param ctx the parse tree
+	 */
+	enterTagContext?: (ctx: TagContextContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagContext`.
+	 * @param ctx the parse tree
+	 */
+	exitTagContext?: (ctx: TagContextContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `ParserGrammarCypress.tagIt`.
@@ -157,6 +189,105 @@ export interface ParserGrammarCypressListener extends ParseTreeListener {
 	exitTagUrl?: (ctx: TagUrlContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagOn`.
+	 * @param ctx the parse tree
+	 */
+	enterTagOn?: (ctx: TagOnContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagOn`.
+	 * @param ctx the parse tree
+	 */
+	exitTagOn?: (ctx: TagOnContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagIntercept`.
+	 * @param ctx the parse tree
+	 */
+	enterTagIntercept?: (ctx: TagInterceptContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagIntercept`.
+	 * @param ctx the parse tree
+	 */
+	exitTagIntercept?: (ctx: TagInterceptContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagWindow`.
+	 * @param ctx the parse tree
+	 */
+	enterTagWindow?: (ctx: TagWindowContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagWindow`.
+	 * @param ctx the parse tree
+	 */
+	exitTagWindow?: (ctx: TagWindowContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagSelect`.
+	 * @param ctx the parse tree
+	 */
+	enterTagSelect?: (ctx: TagSelectContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagSelect`.
+	 * @param ctx the parse tree
+	 */
+	exitTagSelect?: (ctx: TagSelectContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagPause`.
+	 * @param ctx the parse tree
+	 */
+	enterTagPause?: (ctx: TagPauseContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagPause`.
+	 * @param ctx the parse tree
+	 */
+	exitTagPause?: (ctx: TagPauseContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagTittle`.
+	 * @param ctx the parse tree
+	 */
+	enterTagTittle?: (ctx: TagTittleContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagTittle`.
+	 * @param ctx the parse tree
+	 */
+	exitTagTittle?: (ctx: TagTittleContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagFunction`.
+	 * @param ctx the parse tree
+	 */
+	enterTagFunction?: (ctx: TagFunctionContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagFunction`.
+	 * @param ctx the parse tree
+	 */
+	exitTagFunction?: (ctx: TagFunctionContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagFind`.
+	 * @param ctx the parse tree
+	 */
+	enterTagFind?: (ctx: TagFindContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagFind`.
+	 * @param ctx the parse tree
+	 */
+	exitTagFind?: (ctx: TagFindContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagStub`.
+	 * @param ctx the parse tree
+	 */
+	enterTagStub?: (ctx: TagStubContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagStub`.
+	 * @param ctx the parse tree
+	 */
+	exitTagStub?: (ctx: TagStubContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `ParserGrammarCypress.tagContains`.
 	 * @param ctx the parse tree
 	 */
@@ -190,6 +321,105 @@ export interface ParserGrammarCypressListener extends ParseTreeListener {
 	exitTagCheckA11y?: (ctx: TagCheckA11yContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagCheck`.
+	 * @param ctx the parse tree
+	 */
+	enterTagCheck?: (ctx: TagCheckContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagCheck`.
+	 * @param ctx the parse tree
+	 */
+	exitTagCheck?: (ctx: TagCheckContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagIts`.
+	 * @param ctx the parse tree
+	 */
+	enterTagIts?: (ctx: TagItsContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagIts`.
+	 * @param ctx the parse tree
+	 */
+	exitTagIts?: (ctx: TagItsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagInvoke`.
+	 * @param ctx the parse tree
+	 */
+	enterTagInvoke?: (ctx: TagInvokeContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagInvoke`.
+	 * @param ctx the parse tree
+	 */
+	exitTagInvoke?: (ctx: TagInvokeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagWhich`.
+	 * @param ctx the parse tree
+	 */
+	enterTagWhich?: (ctx: TagWhichContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagWhich`.
+	 * @param ctx the parse tree
+	 */
+	exitTagWhich?: (ctx: TagWhichContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagTarget`.
+	 * @param ctx the parse tree
+	 */
+	enterTagTarget?: (ctx: TagTargetContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagTarget`.
+	 * @param ctx the parse tree
+	 */
+	exitTagTarget?: (ctx: TagTargetContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagValue`.
+	 * @param ctx the parse tree
+	 */
+	enterTagValue?: (ctx: TagValueContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagValue`.
+	 * @param ctx the parse tree
+	 */
+	exitTagValue?: (ctx: TagValueContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagLocation`.
+	 * @param ctx the parse tree
+	 */
+	enterTagLocation?: (ctx: TagLocationContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagLocation`.
+	 * @param ctx the parse tree
+	 */
+	exitTagLocation?: (ctx: TagLocationContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagFirst`.
+	 * @param ctx the parse tree
+	 */
+	enterTagFirst?: (ctx: TagFirstContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagFirst`.
+	 * @param ctx the parse tree
+	 */
+	exitTagFirst?: (ctx: TagFirstContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagEq`.
+	 * @param ctx the parse tree
+	 */
+	enterTagEq?: (ctx: TagEqContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagEq`.
+	 * @param ctx the parse tree
+	 */
+	exitTagEq?: (ctx: TagEqContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `ParserGrammarCypress.tagThen`.
 	 * @param ctx the parse tree
 	 */
@@ -221,6 +451,39 @@ export interface ParserGrammarCypressListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitTagWithin?: (ctx: TagWithinContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagAnd`.
+	 * @param ctx the parse tree
+	 */
+	enterTagAnd?: (ctx: TagAndContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagAnd`.
+	 * @param ctx the parse tree
+	 */
+	exitTagAnd?: (ctx: TagAndContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagDataString`.
+	 * @param ctx the parse tree
+	 */
+	enterTagDataString?: (ctx: TagDataStringContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagDataString`.
+	 * @param ctx the parse tree
+	 */
+	exitTagDataString?: (ctx: TagDataStringContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagWrap`.
+	 * @param ctx the parse tree
+	 */
+	enterTagWrap?: (ctx: TagWrapContext) => void;
+	/**
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagWrap`.
+	 * @param ctx the parse tree
+	 */
+	exitTagWrap?: (ctx: TagWrapContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `ParserGrammarCypress.expressionExpect`.
@@ -267,15 +530,15 @@ export interface ParserGrammarCypressListener extends ParseTreeListener {
 	exitTagIndex?: (ctx: TagIndexContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `ParserGrammarCypress.tagPrint`.
+	 * Enter a parse tree produced by `ParserGrammarCypress.tagAs`.
 	 * @param ctx the parse tree
 	 */
-	enterTagPrint?: (ctx: TagPrintContext) => void;
+	enterTagAs?: (ctx: TagAsContext) => void;
 	/**
-	 * Exit a parse tree produced by `ParserGrammarCypress.tagPrint`.
+	 * Exit a parse tree produced by `ParserGrammarCypress.tagAs`.
 	 * @param ctx the parse tree
 	 */
-	exitTagPrint?: (ctx: TagPrintContext) => void;
+	exitTagAs?: (ctx: TagAsContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `ParserGrammarCypress.tagEventOnBeforeLoad`.
@@ -298,16 +561,5 @@ export interface ParserGrammarCypressListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitTagEventListener?: (ctx: TagEventListenerContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `ParserGrammarCypress.tagConstant`.
-	 * @param ctx the parse tree
-	 */
-	enterTagConstant?: (ctx: TagConstantContext) => void;
-	/**
-	 * Exit a parse tree produced by `ParserGrammarCypress.tagConstant`.
-	 * @param ctx the parse tree
-	 */
-	exitTagConstant?: (ctx: TagConstantContext) => void;
 }
 
