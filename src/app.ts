@@ -1,34 +1,36 @@
-import { CharStreams, CommonTokenStream } from 'antlr4ts';
-import { LexerGrammarCypress } from './antlr/LexerGrammarCypress';
-import { ParserGrammarCypress, TestBlockContext } from './antlr/ParserGrammarCypress';
-import CustomErrorListener, { ICustomErrorListener } from './CustomErrorListener'; // Importar el error listener personalizado
+/*import { CharStreams, CommonTokenStream } from 'antlr4';
+import { JavaScriptLexer } from './antlr/JavaScriptLexer';
+import { JavaScriptParser, ProgramContext } from './antlr/JavaScriptParser';
+import CustomErrorListener, { ICustomErrorListener } from './CustomErrorListener';
+
+// Importar el error listener personalizado
 import fs from 'fs';
 import path from 'path';
 
-export function parse(input: string): {ast: TestBlockContext, errors: ICustomErrorListener[]} {
+export function parse(input: string): {ast: ProgramContext, errors: ICustomErrorListener[]} {
 
     
     //Lexer
     const chars = CharStreams.fromString(input);
-    const lexer = new LexerGrammarCypress(chars);
+    const lexer = new JavaScriptLexer(chars);
     lexer.removeErrorListeners();
     const customErrorListener = new CustomErrorListener();
     lexer.addErrorListener(customErrorListener);
 
     //Parser
     const tokens = new CommonTokenStream(lexer);
-    const parser = new ParserGrammarCypress(tokens);
+    const parser = new JavaScriptParser(tokens);
     parser.removeErrorListeners();
     parser.addErrorListener(customErrorListener);
 
-    const ast = parser.testBlock();
+    const ast = parser.program();
     const errors: ICustomErrorListener[] = customErrorListener.getErrors();
 
     return {ast, errors}
   
 }
 
-export function parseAndGetASTRoot(code: string): TestBlockContext {
+export function parseAndGetASTRoot(code: string): ProgramContext {
     const {ast} = parse(code);
     return ast;
 }
@@ -63,3 +65,4 @@ files.forEach((file) => {
     analyzeFile(filePath, file);
     
 });
+*/
