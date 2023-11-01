@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "name": "test_parser",
+  "dependencies": {
+    "@types/node": {
+      "version": "20.8.9",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-20.8.9.tgz",
+      "overridden": false
+    },
+    "antlr4": {
+      "version": "4.13.1",
+      "resolved": "https://registry.npmjs.org/antlr4/-/antlr4-4.13.1.tgz",
+      "overridden": false
+    },
+    "typescript": {
+      "version": "5.2.2",
+      "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.2.2.tgz",
+      "overridden": false
+    }
+  }
+}
