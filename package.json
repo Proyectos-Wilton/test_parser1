@@ -1,21 +1,21 @@
 {
   "name": "test_parser",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "start": "node ./dist/app.js",
-    "antlr4ts": "antlr4ts -visitor -o ./src/antlr ./src/JavaScriptLexer.g4 ./src/JavaScriptParser.g4"
+    "start": "node ./src/main.js",
+    "antlrl": "java -jar /home/camilo/Desktop/antlr-4.13.1-complete.jar -Dlanguage=JavaScript -visitor ./src/antlr/JavaScriptLexer.g4",
+    "antlrp": "java -jar /home/camilo/Desktop/antlr-4.13.1-complete.jar -Dlanguage=JavaScript -visitor ./src/antlr/JavaScriptParser.g4"
   },
   "version": "1.0.0",
   "description": "Proyecto de prueba",
-  "main": "app.js",
+  "main": "main.js",
   "keywords": [
     "prueba"
   ],
   "author": "Wilton",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.8.9",
-    "typescript": "^5.2.2"
+    "@types/node": "^20.8.9"
   },
   "dependencies": {
     "antlr4": "^4.13.1"

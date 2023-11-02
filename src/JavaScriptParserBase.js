@@ -1,5 +1,5 @@
-import * as antlr4 from 'antlr4';
-import { JavaScriptParser }from './antlr/JavaScriptParser';
+import antlr4 from 'antlr4'
+import JavaScriptParser from './antlr/JavaScriptParser.js';
 
 export default class JavaScriptParserBase extends antlr4.Parser {
 
@@ -57,22 +57,7 @@ export default class JavaScriptParserBase extends antlr4.Parser {
         // Check if the token resides on the HIDDEN channel and if it's of the
         // provided type.
         return nextToken.channel === antlr4.Lexer.HIDDEN && nextToken.type === type;
-
-         /* const hiddenTokens = this._input.getHiddenTokensToRight(nextTokenIndex);
-
-        // Check if there are any hidden tokens and if any of them are of the provided type.
-        if (hiddenTokens) {
-            for (const token of hiddenTokens) {
-                if (token.type === type) {
-                    return true;
-                }
-            }
-        }
-
-        return false;*/
     }
-
-
 
     lineTerminatorAhead() {
         let possibleIndexEosToken = this.getCurrentToken().tokenIndex - 1;
