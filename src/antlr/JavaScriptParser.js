@@ -1,4 +1,4 @@
-// Generated from ./src/antlr/JavaScriptParser.g4 by ANTLR 4.13.1
+// Generated from ./src/antlr/JavaScriptParser.g4 by ANTLR 4.13.0
 // jshint ignore: start
 import antlr4 from 'antlr4';
 import JavaScriptParserListener from './JavaScriptParserListener.js';

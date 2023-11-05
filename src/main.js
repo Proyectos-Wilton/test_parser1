@@ -1,7 +1,7 @@
 import * as antlr4 from 'antlr4';
 import JavaScriptLexer from './antlr/JavaScriptLexer.js';
 import JavaScriptParser from './antlr/JavaScriptParser.js';
-import CustomErrorListene from './CustomErrorListener.js';
+import CustomErrorListener from './CustomErrorListener.js';
 
 const sourceCode = `
     function add(a, b) {
@@ -14,7 +14,7 @@ export function parse (input)
     const chars = new antlr4.InputStream(input);
     const lexer = new JavaScriptLexer(chars);
     lexer.removeErrorListeners();
-    const customErrorListener =  new CustomErrorListene();
+    const customErrorListener =  new CustomErrorListener();
     lexer.addErrorListener(customErrorListener);
     const tokens  = new antlr4.CommonTokenStream(lexer);
     const parser = new JavaScriptParser(tokens);
@@ -30,7 +30,9 @@ export function parse (input)
     if (customErrors.length > 0 )
     {
         console.log("Hay errores: ", customErrors)
-    } 
+    }else{
+        console.log("Todo bien")
+    }
 
 }
 
