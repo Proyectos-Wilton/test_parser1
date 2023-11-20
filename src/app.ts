@@ -57,7 +57,7 @@ function analyzeFile(filePath: string, fileName: string) {
   }
 
 
-files.forEach((file) => {
+files.forEach((file:any) => {
     console.log('-------------------------', file, '-------------------------');
     const filePath = path.join(folderPath, file);
     analyzeFile(filePath, file);
