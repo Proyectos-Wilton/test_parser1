@@ -585,6 +585,7 @@ instructionDeclaration
 codeDeclaration
     : contextDeclaration
     | listFunction
+    | afterEachDeclaration
     ;
 
 contextDeclaration
@@ -600,6 +601,10 @@ beforeEachDeclaration
     : BeforeEach '(' '('')' ARROW '{' cyDeclaration+  '}' ')'
     ;
 
+afterEachDeclaration
+    : AfterEach '(' '('')' ARROW '{' StringLiteral  '}' ')'
+    ;
+
 itDeclaration
     : It ('.' Skip)? '(' StringLiteral ',' '('')' ARROW '{' cyDeclaration+ '}' ')' 
     ;
@@ -610,9 +615,31 @@ cyDeclaration
 
 listFunctionCy
     : locationDeclaration
+    | getDeclaration
     | visitDeclaration
+    | waitDeclaration
+    | urlDeclaration
+    | onDeclaration
     ;
 
+getDeclaration
+    : Get '(' StringLiteral ')'
+    ;
+
+
+
+waitDeclaration
+    : Wait '(' (StringLiteral | DecimalLiteral) ')'
+    ;
+
+urlDeclaration
+    : Url '(' ')'
+    ;
+
+onDeclaration
+    : On '(' StringLiteral ')'
+    ;
+    
 locationDeclaration
     : Location '(' StringLiteral ')'
     ;

@@ -1346,6 +1346,15 @@ export default class JavaScriptParserListener extends antlr4.tree.ParseTreeListe
 	}
 
 
+	// Enter a parse tree produced by JavaScriptParser#afterEachDeclaration.
+	enterAfterEachDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#afterEachDeclaration.
+	exitAfterEachDeclaration(ctx) {
+	}
+
+
 	// Enter a parse tree produced by JavaScriptParser#itDeclaration.
 	enterItDeclaration(ctx) {
 	}
@@ -1370,6 +1379,42 @@ export default class JavaScriptParserListener extends antlr4.tree.ParseTreeListe
 
 	// Exit a parse tree produced by JavaScriptParser#listFunctionCy.
 	exitListFunctionCy(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#getDeclaration.
+	enterGetDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#getDeclaration.
+	exitGetDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#waitDeclaration.
+	enterWaitDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#waitDeclaration.
+	exitWaitDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#urlDeclaration.
+	enterUrlDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#urlDeclaration.
+	exitUrlDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#onDeclaration.
+	enterOnDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#onDeclaration.
+	exitOnDeclaration(ctx) {
 	}
 
 

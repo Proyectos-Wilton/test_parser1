@@ -14,6 +14,8 @@ describe('A11y passes', () => {
   it('accessibility check', () => {
     cy.visit('index.html')
     cy.location("path")
+    cy.get('#click')
+    cy.get('#click')
   })
 
 
@@ -21,6 +23,10 @@ describe('A11y passes', () => {
     beforeEach(() => {
       cy.visit('index.html')
       cy.location("path")
+      cy.wait(100)
+      cy.wait("hola")
+      cy.url()
+      cy.on("hola")
     })
   
     it('accessibility check', () => {

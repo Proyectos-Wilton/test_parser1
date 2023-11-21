@@ -900,6 +900,12 @@ export default class JavaScriptParserVisitor extends antlr4.tree.ParseTreeVisito
 	}
 
 
+	// Visit a parse tree produced by JavaScriptParser#afterEachDeclaration.
+	visitAfterEachDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 	// Visit a parse tree produced by JavaScriptParser#itDeclaration.
 	visitItDeclaration(ctx) {
 	  return this.visitChildren(ctx);
@@ -914,6 +920,30 @@ export default class JavaScriptParserVisitor extends antlr4.tree.ParseTreeVisito
 
 	// Visit a parse tree produced by JavaScriptParser#listFunctionCy.
 	visitListFunctionCy(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#getDeclaration.
+	visitGetDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#waitDeclaration.
+	visitWaitDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#urlDeclaration.
+	visitUrlDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#onDeclaration.
+	visitOnDeclaration(ctx) {
 	  return this.visitChildren(ctx);
 	}
 
