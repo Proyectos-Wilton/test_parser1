@@ -43,6 +43,7 @@ program
 
 sourceElement
     : statement
+    | describeDeclaration
     ;
 
 statement
@@ -570,4 +571,52 @@ eos
     | EOF
     | {this.lineTerminatorAhead()}?
     | {this.closeBrace()}?
+    ;
+
+// CYPRESS
+describeDeclaration
+    : Describe instructionDeclaration
+    ;
+
+instructionDeclaration
+    : '(' StringLiteral ',' '('')' ARROW codeDeclaration* ')'
+    ;
+
+codeDeclaration
+    : contextDeclaration
+    | listFunction
+    ;
+
+contextDeclaration
+    : Context '(' StringLiteral ',' '('')' ARROW '{' listFunction+ '}' ')'
+    ; 
+
+listFunction
+    : beforeEachDeclaration
+    | itDeclaration
+    ;
+
+beforeEachDeclaration
+    : BeforeEach '(' StringLiteral ',' '('')' ARROW '{' cyDeclaration+  '}' ')'
+    ;
+
+itDeclaration
+    : It '.' Skip? '(' StringLiteral ',' '('')' ARROW '{' cyDeclaration+ '}' ')' 
+    ;
+
+cyDeclaration
+    :  Cy '.' listFunctionCy
+    ;
+
+listFunctionCy
+    : locationDeclaration
+    | visitDeclaration
+    ;
+
+locationDeclaration
+    : Location '(' StringLiteral ')'
+    ;
+
+visitDeclaration
+    : Visit '(' StringLiteral ')'
     ;

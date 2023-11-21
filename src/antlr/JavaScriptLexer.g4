@@ -158,6 +158,61 @@ As:                             'as';
 From:                           'from';
 Of:                             'of';
 
+
+/// Keywords Cypress
+Describe:                       'describe';
+It:                             'it';
+BeforeEach:                     'beforeEach';
+AfterEach:                      'afterEach';
+OnBeforeLoad:                   'onBeforeLoad';
+AddEventListener:               'addEventListener';
+Context:                        'context';
+Cy:                             'cy';
+Visit:                          'visit';
+Wait:                           'wait';
+Get:                            'get';
+Url:                            'url';
+On:                             'on';
+Contains:                       'contains';
+InjectAxe:                      'injectAxe';
+CheckA11y:                      'checkA11y';
+Window:                         'window';
+Stub:                           'stub';
+Invoke:                         'invoke';
+Tittle:                         'title';
+Find:                           'find';
+Check:                          'check';
+Location:                       'location';
+Pause:                          'pause';
+Select:                         'select';
+Its:                            'its';
+Intercept:                      'intercept';
+Task:                           'task';
+Screenshot:                     'screenshot';
+Fixture:                        'fixture';
+ClickLink:                      'clickLink';
+Request:                        'request';
+Submit:                         'submit';
+GetCookie:                      'getCookie';
+Should:                         'should';
+Within:                         'within';
+Skip:                           'skip';
+AttachFile:                     'attachFile';
+AndC:                           'and';
+Wrap:                           'wrap';
+Then:                           'then';
+Expect:                         'expect';
+To:                             'to';
+Equal:                          'equal';
+Click:                          'click';
+Type:                           'type';
+Exist:                          'exist';
+First:                          'first';
+DateString:                     'dateString';
+Name:                           'name:';
+
+
+
 /// Future Reserved Words
 
 Class:                          'class';

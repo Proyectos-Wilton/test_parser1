@@ -4,9 +4,16 @@ import JavaScriptParser from './antlr/JavaScriptParser.js';
 import CustomErrorListener from './CustomErrorListener.js';
 
 const sourceCode = `
-    function add(a, b) {
-        return a + b;
-    }
+
+describe('A11y passes', () => {
+  beforeEach(() => {
+    cy.visit('index.html')
+  })
+
+  it('accessibility check', () => {
+    cy.location("path")
+  })
+})
 `;
 
 export function parse (input)
@@ -31,7 +38,7 @@ export function parse (input)
     {
         console.log("Hay errores: ", customErrors)
     }else{
-        console.log("Todo bien")
+        console.log("Todo bien", input)
     }
 
 }

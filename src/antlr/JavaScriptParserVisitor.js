@@ -864,5 +864,71 @@ export default class JavaScriptParserVisitor extends antlr4.tree.ParseTreeVisito
 	}
 
 
+	// Visit a parse tree produced by JavaScriptParser#describeDeclaration.
+	visitDescribeDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#instructionDeclaration.
+	visitInstructionDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#codeDeclaration.
+	visitCodeDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#contextDeclaration.
+	visitContextDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#listFunction.
+	visitListFunction(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#beforeEachDeclaration.
+	visitBeforeEachDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#itDeclaration.
+	visitItDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#cyDeclaration.
+	visitCyDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#listFunctionCy.
+	visitListFunctionCy(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#locationDeclaration.
+	visitLocationDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
+	// Visit a parse tree produced by JavaScriptParser#visitDeclaration.
+	visitVisitDeclaration(ctx) {
+	  return this.visitChildren(ctx);
+	}
+
+
 
 }

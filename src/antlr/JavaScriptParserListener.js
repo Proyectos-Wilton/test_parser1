@@ -1292,5 +1292,104 @@ export default class JavaScriptParserListener extends antlr4.tree.ParseTreeListe
 	}
 
 
+	// Enter a parse tree produced by JavaScriptParser#describeDeclaration.
+	enterDescribeDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#describeDeclaration.
+	exitDescribeDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#instructionDeclaration.
+	enterInstructionDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#instructionDeclaration.
+	exitInstructionDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#codeDeclaration.
+	enterCodeDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#codeDeclaration.
+	exitCodeDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#contextDeclaration.
+	enterContextDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#contextDeclaration.
+	exitContextDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#listFunction.
+	enterListFunction(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#listFunction.
+	exitListFunction(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#beforeEachDeclaration.
+	enterBeforeEachDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#beforeEachDeclaration.
+	exitBeforeEachDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#itDeclaration.
+	enterItDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#itDeclaration.
+	exitItDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#cyDeclaration.
+	enterCyDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#cyDeclaration.
+	exitCyDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#listFunctionCy.
+	enterListFunctionCy(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#listFunctionCy.
+	exitListFunctionCy(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#locationDeclaration.
+	enterLocationDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#locationDeclaration.
+	exitLocationDeclaration(ctx) {
+	}
+
+
+	// Enter a parse tree produced by JavaScriptParser#visitDeclaration.
+	enterVisitDeclaration(ctx) {
+	}
+
+	// Exit a parse tree produced by JavaScriptParser#visitDeclaration.
+	exitVisitDeclaration(ctx) {
+	}
+
+
 
 }
