@@ -90,10 +90,10 @@ const serializedATN = [4,1,179,1214,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,
 83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,
 1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,83,1,
 83,1,83,1,83,3,83,1109,8,83,1,84,1,84,1,85,1,85,1,85,1,85,3,85,1117,8,85,
-1,86,1,86,1,86,1,87,1,87,1,87,1,87,1,87,1,87,1,87,5,87,1129,8,87,10,87,12,
-87,1132,9,87,1,87,1,87,1,88,1,88,3,88,1138,8,88,1,89,1,89,1,89,1,89,1,89,
-1,89,1,89,1,89,1,89,4,89,1149,8,89,11,89,12,89,1150,1,89,1,89,1,89,1,90,
-1,90,3,90,1158,8,90,1,91,1,91,1,91,1,91,1,91,1,91,1,91,1,91,1,91,4,91,1169,
+1,86,1,86,1,86,1,87,1,87,1,87,1,87,1,87,1,87,1,87,1,87,5,87,1130,8,87,10,
+87,12,87,1133,9,87,1,87,1,87,1,87,1,88,1,88,3,88,1140,8,88,1,89,1,89,1,89,
+1,89,1,89,1,89,1,89,1,89,1,89,4,89,1151,8,89,11,89,12,89,1152,1,89,1,89,
+1,89,1,90,1,90,3,90,1160,8,90,1,91,1,91,1,91,1,91,1,91,1,91,1,91,4,91,1169,
 8,91,11,91,12,91,1170,1,91,1,91,1,91,1,92,1,92,1,92,3,92,1179,8,92,1,92,
 1,92,1,92,1,92,1,92,1,92,1,92,1,92,4,92,1189,8,92,11,92,12,92,1190,1,92,
 1,92,1,92,1,93,1,93,1,93,1,93,1,94,1,94,3,94,1202,8,94,1,95,1,95,1,95,1,
@@ -123,7 +123,7 @@ const serializedATN = [4,1,179,1214,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,
 1,0,0,0,150,1036,1,0,0,0,152,1038,1,0,0,0,154,1040,1,0,0,0,156,1042,1,0,
 0,0,158,1046,1,0,0,0,160,1052,1,0,0,0,162,1054,1,0,0,0,164,1059,1,0,0,0,
 166,1108,1,0,0,0,168,1110,1,0,0,0,170,1116,1,0,0,0,172,1118,1,0,0,0,174,
-1121,1,0,0,0,176,1137,1,0,0,0,178,1139,1,0,0,0,180,1157,1,0,0,0,182,1159,
+1121,1,0,0,0,176,1139,1,0,0,0,178,1141,1,0,0,0,180,1159,1,0,0,0,182,1161,
 1,0,0,0,184,1175,1,0,0,0,186,1195,1,0,0,0,188,1201,1,0,0,0,190,1203,1,0,
 0,0,192,1208,1,0,0,0,194,196,5,1,0,0,195,194,1,0,0,0,195,196,1,0,0,0,196,
 198,1,0,0,0,197,199,3,112,56,0,198,197,1,0,0,0,198,199,1,0,0,0,199,200,1,
@@ -403,38 +403,38 @@ const serializedATN = [4,1,179,1214,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,
 1,0,0,0,1116,1113,1,0,0,0,1116,1114,1,0,0,0,1116,1115,1,0,0,0,1117,171,1,
 0,0,0,1118,1119,5,101,0,0,1119,1120,3,174,87,0,1120,173,1,0,0,0,1121,1122,
 5,7,0,0,1122,1123,5,171,0,0,1123,1124,5,13,0,0,1124,1125,5,7,0,0,1125,1126,
-5,8,0,0,1126,1130,5,60,0,0,1127,1129,3,176,88,0,1128,1127,1,0,0,0,1129,1132,
-1,0,0,0,1130,1128,1,0,0,0,1130,1131,1,0,0,0,1131,1133,1,0,0,0,1132,1130,
-1,0,0,0,1133,1134,5,8,0,0,1134,175,1,0,0,0,1135,1138,3,178,89,0,1136,1138,
-3,180,90,0,1137,1135,1,0,0,0,1137,1136,1,0,0,0,1138,177,1,0,0,0,1139,1140,
-5,107,0,0,1140,1141,5,7,0,0,1141,1142,5,171,0,0,1142,1143,5,13,0,0,1143,
-1144,5,7,0,0,1144,1145,5,8,0,0,1145,1146,5,60,0,0,1146,1148,5,9,0,0,1147,
-1149,3,180,90,0,1148,1147,1,0,0,0,1149,1150,1,0,0,0,1150,1148,1,0,0,0,1150,
-1151,1,0,0,0,1151,1152,1,0,0,0,1152,1153,5,11,0,0,1153,1154,5,8,0,0,1154,
-179,1,0,0,0,1155,1158,3,182,91,0,1156,1158,3,184,92,0,1157,1155,1,0,0,0,
-1157,1156,1,0,0,0,1158,181,1,0,0,0,1159,1160,5,103,0,0,1160,1161,5,7,0,0,
-1161,1162,5,171,0,0,1162,1163,5,13,0,0,1163,1164,5,7,0,0,1164,1165,5,8,0,
-0,1165,1166,5,60,0,0,1166,1168,5,9,0,0,1167,1169,3,186,93,0,1168,1167,1,
-0,0,0,1169,1170,1,0,0,0,1170,1168,1,0,0,0,1170,1171,1,0,0,0,1171,1172,1,
-0,0,0,1172,1173,5,11,0,0,1173,1174,5,8,0,0,1174,183,1,0,0,0,1175,1176,5,
-102,0,0,1176,1178,5,19,0,0,1177,1179,5,137,0,0,1178,1177,1,0,0,0,1178,1179,
-1,0,0,0,1179,1180,1,0,0,0,1180,1181,5,7,0,0,1181,1182,5,171,0,0,1182,1183,
-5,13,0,0,1183,1184,5,7,0,0,1184,1185,5,8,0,0,1185,1186,5,60,0,0,1186,1188,
-5,9,0,0,1187,1189,3,186,93,0,1188,1187,1,0,0,0,1189,1190,1,0,0,0,1190,1188,
-1,0,0,0,1190,1191,1,0,0,0,1191,1192,1,0,0,0,1192,1193,5,11,0,0,1193,1194,
-5,8,0,0,1194,185,1,0,0,0,1195,1196,5,108,0,0,1196,1197,5,19,0,0,1197,1198,
-3,188,94,0,1198,187,1,0,0,0,1199,1202,3,190,95,0,1200,1202,3,192,96,0,1201,
-1199,1,0,0,0,1201,1200,1,0,0,0,1202,189,1,0,0,0,1203,1204,5,123,0,0,1204,
-1205,5,7,0,0,1205,1206,5,171,0,0,1206,1207,5,8,0,0,1207,191,1,0,0,0,1208,
-1209,5,109,0,0,1209,1210,5,7,0,0,1210,1211,5,171,0,0,1211,1212,5,8,0,0,1212,
-193,1,0,0,0,128,195,198,204,226,230,237,243,247,254,262,267,269,276,280,
-289,293,301,305,309,318,326,330,338,343,345,352,357,368,374,389,409,413,
-417,425,434,439,446,451,456,463,470,477,495,499,501,508,514,519,534,537,
-542,545,556,560,565,576,582,590,596,602,606,610,613,618,624,632,637,642,
-646,650,660,665,668,673,680,687,696,700,705,710,716,720,735,738,743,760,
-763,772,780,784,786,791,795,802,809,861,923,931,935,948,950,959,967,971,
-973,978,982,986,991,997,1002,1005,1009,1020,1026,1036,1052,1059,1108,1116,
-1130,1137,1150,1157,1170,1178,1190,1201];
+5,8,0,0,1126,1127,5,60,0,0,1127,1131,5,9,0,0,1128,1130,3,176,88,0,1129,1128,
+1,0,0,0,1130,1133,1,0,0,0,1131,1129,1,0,0,0,1131,1132,1,0,0,0,1132,1134,
+1,0,0,0,1133,1131,1,0,0,0,1134,1135,5,11,0,0,1135,1136,5,8,0,0,1136,175,
+1,0,0,0,1137,1140,3,178,89,0,1138,1140,3,180,90,0,1139,1137,1,0,0,0,1139,
+1138,1,0,0,0,1140,177,1,0,0,0,1141,1142,5,107,0,0,1142,1143,5,7,0,0,1143,
+1144,5,171,0,0,1144,1145,5,13,0,0,1145,1146,5,7,0,0,1146,1147,5,8,0,0,1147,
+1148,5,60,0,0,1148,1150,5,9,0,0,1149,1151,3,180,90,0,1150,1149,1,0,0,0,1151,
+1152,1,0,0,0,1152,1150,1,0,0,0,1152,1153,1,0,0,0,1153,1154,1,0,0,0,1154,
+1155,5,11,0,0,1155,1156,5,8,0,0,1156,179,1,0,0,0,1157,1160,3,182,91,0,1158,
+1160,3,184,92,0,1159,1157,1,0,0,0,1159,1158,1,0,0,0,1160,181,1,0,0,0,1161,
+1162,5,103,0,0,1162,1163,5,7,0,0,1163,1164,5,7,0,0,1164,1165,5,8,0,0,1165,
+1166,5,60,0,0,1166,1168,5,9,0,0,1167,1169,3,186,93,0,1168,1167,1,0,0,0,1169,
+1170,1,0,0,0,1170,1168,1,0,0,0,1170,1171,1,0,0,0,1171,1172,1,0,0,0,1172,
+1173,5,11,0,0,1173,1174,5,8,0,0,1174,183,1,0,0,0,1175,1178,5,102,0,0,1176,
+1177,5,19,0,0,1177,1179,5,137,0,0,1178,1176,1,0,0,0,1178,1179,1,0,0,0,1179,
+1180,1,0,0,0,1180,1181,5,7,0,0,1181,1182,5,171,0,0,1182,1183,5,13,0,0,1183,
+1184,5,7,0,0,1184,1185,5,8,0,0,1185,1186,5,60,0,0,1186,1188,5,9,0,0,1187,
+1189,3,186,93,0,1188,1187,1,0,0,0,1189,1190,1,0,0,0,1190,1188,1,0,0,0,1190,
+1191,1,0,0,0,1191,1192,1,0,0,0,1192,1193,5,11,0,0,1193,1194,5,8,0,0,1194,
+185,1,0,0,0,1195,1196,5,108,0,0,1196,1197,5,19,0,0,1197,1198,3,188,94,0,
+1198,187,1,0,0,0,1199,1202,3,190,95,0,1200,1202,3,192,96,0,1201,1199,1,0,
+0,0,1201,1200,1,0,0,0,1202,189,1,0,0,0,1203,1204,5,123,0,0,1204,1205,5,7,
+0,0,1205,1206,5,171,0,0,1206,1207,5,8,0,0,1207,191,1,0,0,0,1208,1209,5,109,
+0,0,1209,1210,5,7,0,0,1210,1211,5,171,0,0,1211,1212,5,8,0,0,1212,193,1,0,
+0,0,128,195,198,204,226,230,237,243,247,254,262,267,269,276,280,289,293,
+301,305,309,318,326,330,338,343,345,352,357,368,374,389,409,413,417,425,
+434,439,446,451,456,463,470,477,495,499,501,508,514,519,534,537,542,545,
+556,560,565,576,582,590,596,602,606,610,613,618,624,632,637,642,646,650,
+660,665,668,673,680,687,696,700,705,710,716,720,735,738,743,760,763,772,
+780,784,786,791,795,802,809,861,923,931,935,948,950,959,967,971,973,978,
+982,986,991,997,1002,1005,1009,1020,1026,1036,1052,1059,1108,1116,1131,1139,
+1152,1159,1170,1178,1190,1201];
 
 
 const atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -5944,17 +5944,21 @@ export default class JavaScriptParser extends JavaScriptParserBase {
 	        this.match(JavaScriptParser.CloseParen);
 	        this.state = 1126;
 	        this.match(JavaScriptParser.ARROW);
-	        this.state = 1130;
+	        this.state = 1127;
+	        this.match(JavaScriptParser.OpenBrace);
+	        this.state = 1131;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        while(((((_la - 102)) & ~0x1f) === 0 && ((1 << (_la - 102)) & 35) !== 0)) {
-	            this.state = 1127;
+	            this.state = 1128;
 	            this.codeDeclaration();
-	            this.state = 1132;
+	            this.state = 1133;
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        }
-	        this.state = 1133;
+	        this.state = 1134;
+	        this.match(JavaScriptParser.CloseBrace);
+	        this.state = 1135;
 	        this.match(JavaScriptParser.CloseParen);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -5976,18 +5980,18 @@ export default class JavaScriptParser extends JavaScriptParserBase {
 	    let localctx = new CodeDeclarationContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 176, JavaScriptParser.RULE_codeDeclaration);
 	    try {
-	        this.state = 1137;
+	        this.state = 1139;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
 	        case 107:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 1135;
+	            this.state = 1137;
 	            this.contextDeclaration();
 	            break;
 	        case 102:
 	        case 103:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 1136;
+	            this.state = 1138;
 	            this.listFunction();
 	            break;
 	        default:
@@ -6015,35 +6019,35 @@ export default class JavaScriptParser extends JavaScriptParserBase {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 1139;
-	        this.match(JavaScriptParser.Context);
-	        this.state = 1140;
-	        this.match(JavaScriptParser.OpenParen);
 	        this.state = 1141;
-	        this.match(JavaScriptParser.StringLiteral);
+	        this.match(JavaScriptParser.Context);
 	        this.state = 1142;
-	        this.match(JavaScriptParser.Comma);
-	        this.state = 1143;
 	        this.match(JavaScriptParser.OpenParen);
+	        this.state = 1143;
+	        this.match(JavaScriptParser.StringLiteral);
 	        this.state = 1144;
-	        this.match(JavaScriptParser.CloseParen);
+	        this.match(JavaScriptParser.Comma);
 	        this.state = 1145;
-	        this.match(JavaScriptParser.ARROW);
+	        this.match(JavaScriptParser.OpenParen);
 	        this.state = 1146;
+	        this.match(JavaScriptParser.CloseParen);
+	        this.state = 1147;
+	        this.match(JavaScriptParser.ARROW);
+	        this.state = 1148;
 	        this.match(JavaScriptParser.OpenBrace);
-	        this.state = 1148; 
+	        this.state = 1150; 
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
 	        do {
-	            this.state = 1147;
+	            this.state = 1149;
 	            this.listFunction();
-	            this.state = 1150; 
+	            this.state = 1152; 
 	            this._errHandler.sync(this);
 	            _la = this._input.LA(1);
 	        } while(_la===102 || _la===103);
-	        this.state = 1152;
+	        this.state = 1154;
 	        this.match(JavaScriptParser.CloseBrace);
-	        this.state = 1153;
+	        this.state = 1155;
 	        this.match(JavaScriptParser.CloseParen);
 	    } catch (re) {
 	    	if(re instanceof antlr4.error.RecognitionException) {
@@ -6065,17 +6069,17 @@ export default class JavaScriptParser extends JavaScriptParserBase {
 	    let localctx = new ListFunctionContext(this, this._ctx, this.state);
 	    this.enterRule(localctx, 180, JavaScriptParser.RULE_listFunction);
 	    try {
-	        this.state = 1157;
+	        this.state = 1159;
 	        this._errHandler.sync(this);
 	        switch(this._input.LA(1)) {
 	        case 103:
 	            this.enterOuterAlt(localctx, 1);
-	            this.state = 1155;
+	            this.state = 1157;
 	            this.beforeEachDeclaration();
 	            break;
 	        case 102:
 	            this.enterOuterAlt(localctx, 2);
-	            this.state = 1156;
+	            this.state = 1158;
 	            this.itDeclaration();
 	            break;
 	        default:
@@ -6103,14 +6107,10 @@ export default class JavaScriptParser extends JavaScriptParserBase {
 	    var _la = 0;
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 1159;
-	        this.match(JavaScriptParser.BeforeEach);
-	        this.state = 1160;
-	        this.match(JavaScriptParser.OpenParen);
 	        this.state = 1161;
-	        this.match(JavaScriptParser.StringLiteral);
+	        this.match(JavaScriptParser.BeforeEach);
 	        this.state = 1162;
-	        this.match(JavaScriptParser.Comma);
+	        this.match(JavaScriptParser.OpenParen);
 	        this.state = 1163;
 	        this.match(JavaScriptParser.OpenParen);
 	        this.state = 1164;
@@ -6157,12 +6157,12 @@ export default class JavaScriptParser extends JavaScriptParserBase {
 	        this.enterOuterAlt(localctx, 1);
 	        this.state = 1175;
 	        this.match(JavaScriptParser.It);
-	        this.state = 1176;
-	        this.match(JavaScriptParser.Dot);
 	        this.state = 1178;
 	        this._errHandler.sync(this);
 	        _la = this._input.LA(1);
-	        if(_la===137) {
+	        if(_la===19) {
+	            this.state = 1176;
+	            this.match(JavaScriptParser.Dot);
 	            this.state = 1177;
 	            this.match(JavaScriptParser.Skip);
 	        }
@@ -14405,6 +14405,14 @@ class InstructionDeclarationContext extends antlr4.ParserRuleContext {
 	    return this.getToken(JavaScriptParser.ARROW, 0);
 	};
 
+	OpenBrace() {
+	    return this.getToken(JavaScriptParser.OpenBrace, 0);
+	};
+
+	CloseBrace() {
+	    return this.getToken(JavaScriptParser.CloseBrace, 0);
+	};
+
 	codeDeclaration = function(i) {
 	    if(i===undefined) {
 	        i = null;
@@ -14663,14 +14671,6 @@ class BeforeEachDeclarationContext extends antlr4.ParserRuleContext {
 	};
 
 
-	StringLiteral() {
-	    return this.getToken(JavaScriptParser.StringLiteral, 0);
-	};
-
-	Comma() {
-	    return this.getToken(JavaScriptParser.Comma, 0);
-	};
-
 	CloseParen = function(i) {
 		if(i===undefined) {
 			i = null;
@@ -14749,10 +14749,6 @@ class ItDeclarationContext extends antlr4.ParserRuleContext {
 	    return this.getToken(JavaScriptParser.It, 0);
 	};
 
-	Dot() {
-	    return this.getToken(JavaScriptParser.Dot, 0);
-	};
-
 	OpenParen = function(i) {
 		if(i===undefined) {
 			i = null;
@@ -14795,6 +14791,10 @@ class ItDeclarationContext extends antlr4.ParserRuleContext {
 
 	CloseBrace() {
 	    return this.getToken(JavaScriptParser.CloseBrace, 0);
+	};
+
+	Dot() {
+	    return this.getToken(JavaScriptParser.Dot, 0);
 	};
 
 	Skip() {

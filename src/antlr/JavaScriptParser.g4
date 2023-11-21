@@ -579,7 +579,7 @@ describeDeclaration
     ;
 
 instructionDeclaration
-    : '(' StringLiteral ',' '('')' ARROW codeDeclaration* ')'
+    : '(' StringLiteral ',' '('')' ARROW '{' codeDeclaration* '}' ')'
     ;
 
 codeDeclaration
@@ -597,11 +597,11 @@ listFunction
     ;
 
 beforeEachDeclaration
-    : BeforeEach '(' StringLiteral ',' '('')' ARROW '{' cyDeclaration+  '}' ')'
+    : BeforeEach '(' '('')' ARROW '{' cyDeclaration+  '}' ')'
     ;
 
 itDeclaration
-    : It '.' Skip? '(' StringLiteral ',' '('')' ARROW '{' cyDeclaration+ '}' ')' 
+    : It ('.' Skip)? '(' StringLiteral ',' '('')' ARROW '{' cyDeclaration+ '}' ')' 
     ;
 
 cyDeclaration

@@ -8,11 +8,27 @@ const sourceCode = `
 describe('A11y passes', () => {
   beforeEach(() => {
     cy.visit('index.html')
+    cy.location("path")
   })
 
   it('accessibility check', () => {
+    cy.visit('index.html')
     cy.location("path")
   })
+
+
+  context('XHR form submission', () => {
+    beforeEach(() => {
+      cy.visit('index.html')
+      cy.location("path")
+    })
+  
+    it('accessibility check', () => {
+      cy.visit('index.html')
+      cy.location("path")
+    })
+  })
+
 })
 `;
 
